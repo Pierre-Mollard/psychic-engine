@@ -1,0 +1,34 @@
+---
+export interface Props {
+    title: string;
+    description: string;
+    logo: string;
+    link: string;
+    color: string;
+}
+const { title, description, logo, link, color } = Astro.props;
+---
+
+<a
+    href={link}
+    class="group block p-6 bg-gray-50 rounded-xl shadow-lg relative overflow-hidden transition duration-300 hover:shadow-2xl hover:ring-2 hover:ring-opacity-50
+           before:absolute before:inset-0 before:opacity-0 before:blur-lg before:transition-opacity before:duration-300 hover:before:opacity-30"
+    style={`--hover-color: ${color}; border-color: var(--hover-color);`}
+>
+    <div class="flex items-center relative z-10">
+        <div class="flex-1">
+            <h2 class="text-xl font-bold text-gray-800">{title}</h2>
+            <p class="text-gray-600 mt-4">{description}</p>
+        </div>
+        <img src={logo} alt="Logo" class="w-16 h-16 ml-4" />
+    </div>
+</a>
+
+<style>
+    a:hover {
+        --tw-ring-color: var(--hover-color);
+    }
+    a:hover::before {
+        background-color: var(--hover-color);
+    }
+</style>
