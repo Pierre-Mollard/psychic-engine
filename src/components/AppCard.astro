@@ -4,14 +4,15 @@ export interface Props {
     description: string;
     logo: string;
     link: string;
-    color: string;
+    color: string; // Example: "red", "blue", "green"
 }
 const { title, description, logo, link, color } = Astro.props;
 ---
 
 <a
     href={link}
-    class="group block p-6 bg-gray-50 rounded-xl shadow-lg relative overflow-hidden transition duration-300 hover:shadow-2xl hover:ring-2 hover:ring-opacity-50
+    class="group block p-6 bg-gray-50 rounded-xl shadow-lg relative overflow-hidden transition duration-300
+           hover:shadow-2xl hover:ring-2 hover:ring-opacity-50 hover:scale-105
            before:absolute before:inset-0 before:opacity-0 before:blur-lg before:transition-opacity before:duration-300 hover:before:opacity-30"
     style={`--hover-color: ${color}; border-color: var(--hover-color);`}
 >
