@@ -1,5 +1,7 @@
 ---
-import astroLogo from "../assets/astro.svg";
+import markImage from '../assets/mark.svg';
+import meImage from '../assets/me.jpg';
+import clsx from 'clsx';
 
 type Link = {
   name: string;
@@ -51,27 +53,26 @@ if (currentPath.startsWith("/check-it/")) {
       </button>
 
 
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start" >
-
       <!-- Desktop Menu -->
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start " >
+
         <div class="flex shrink-0 items-center">
             <img
                 class="h-8 w-auto"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                src={markImage.src}
                 alt="Your Company"
             />
         </div>
-        <div class="hidden sm:ml-6 sm:block ">
+
+        <div class="hidden sm:ml-6  sm:flex sm:items-center ">
             <div class="hidden sm:flex space-x-4">
                 {links.map((link: Link) => (
                   <div class="relative group">
                     <a
                       href={link.href}
-                      class={`px-3 py-2 text-sm font-medium rounded-md ${
-                        activeTab === link.name
+                      class={clsx("px-3 py-2 text-sm font-medium rounded-md", activeTab === link.name
                           ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white"
-                      }`}
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white")}
                     >
                       {link.name}
                     </a>
@@ -86,13 +87,13 @@ if (currentPath.startsWith("/check-it/")) {
                 </div>
               ))}
             </div>
-            </div>
+          </div>
       </div>
 
       <!-- Profile -->
       <div class="relative">
         <div class="flex rounded-full focus:ring-2 focus:ring-white">
-          <img class="size-8 rounded-full" src={astroLogo.src} alt="Profile" />
+          <img class="size-8 rounded-full" src={meImage.src} alt="Profile" />
         </button>
       </div>
     </div>
@@ -103,11 +104,9 @@ if (currentPath.startsWith("/check-it/")) {
     {links.map((link: Link) => (
       <a
         href={link.href}
-        class={`block rounded-md px-3 py-2 text-base font-medium ${
-          activeTab === link.name
+        class={clsx("block rounded-md px-3 py-2 text-base font-medium", activeTab === link.name
             ? "bg-gray-900 text-white"
-            : "text-gray-300 hover:bg-gray-700 hover:text-white"
-        }`}
+            : "text-gray-300 hover:bg-gray-700 hover:text-white")}
       >
         {link.name}
       </a>
