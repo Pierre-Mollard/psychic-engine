@@ -1,31 +1,27 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/NavBar.astro";
 import AppCard from "../components/AppCard.astro";
 ---
 
 <Layout>
-	<Navbar />
-	<div class="flex items-center justify-center min-h-screen bg-blue-200 p-4">
-		<div
-			class="max-w-4xl w-full p-6 bg-opacity-40 backdrop-blur-lg rounded-2xl shadow-lg"
-		>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<AppCard
-					title="Card Title 1"
-					description="This is a small description for the first card."
-					logo="https://dummyimage.com/250/ffffff/000000"
-					link="#"
-					color="blue"
-				/>
-				<AppCard
-					title="Card Title 2"
-					description="This is a small description for the second card."
-					logo="https://dummyimage.com/250/ffffff/000000"
-					link="#"
-					color="red"
-				/>
-			</div>
+	<div
+		class="w-full max-w-4xl bg-blue-200 p-4 rounded-2xl shadow-lg bg-opacity-40 backdrop-blur-lg"
+	>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<AppCard
+				title="Card Title 1"
+				description="This is a small description for the first card."
+				logo="https://dummyimage.com/250/ffffff/000000"
+				link="#"
+				color="blue"
+			/>
+			<AppCard
+				title="Card Title 2"
+				description="This is a small description for the second card."
+				logo="https://dummyimage.com/250/ffffff/000000"
+				link="#"
+				color="red"
+			/>
 		</div>
 	</div>
 </Layout>

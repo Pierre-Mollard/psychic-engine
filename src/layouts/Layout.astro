@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/NavBar.astro";
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -9,10 +11,15 @@ import "../styles/global.css";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Pierre Mollard</title>
+		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="flex flex-col min-h-screen bg-gray-100 text-gray-900">
+		<Navbar />
+		<main
+			class="flex-grow flex items-center justify-center container mx-auto p-6"
+		>
+			<slot />
+		</main>
 	</body>
 </html>
 
