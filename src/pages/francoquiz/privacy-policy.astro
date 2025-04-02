@@ -1,16 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { getUserLanguage } from "../../utils/lang.ts";
+import { Content } from "../../content/francoquiz/privacy-policy-fr.md";
+
+const lang = getUserLanguage();
+console.log(lang);
 ---
 
 <Layout title="Privacy Policy">
-    <html lang="en">
-        <head>
-            <title>Privacy Policy</title>
-        </head>
-        <body>
-            <h1>Privacy Policy</h1>
-            <p>This is our privacy policy.</p>
-            <a href="/">Back to Home</a>
-        </body>
-    </html>
+    <h1>Privacy Policy</h1>
+    <p>This is our privacy policy.</p>
+    <Content />
+    <a href="/">Back to Home</a>
 </Layout>

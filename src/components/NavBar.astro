@@ -54,7 +54,7 @@ if (currentPath.startsWith("/check-it/")) {
 
 
       <!-- Desktop Menu -->
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start " >
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-10" >
 
         <img
               class="h-8 w-8"
@@ -76,9 +76,9 @@ if (currentPath.startsWith("/check-it/")) {
                     </a>
                   <!-- Dropdown -->
                   {link.dropdown && (
-                    <div class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block">
+                    <div class="absolute left-0 w-48 mt-2 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block group-hover:z-20 z-20">
                       {link.dropdown.map(sub => (
-                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100">{sub.name}</a>
+                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md">{sub.name}</a>
                       ))}
                     </div>
                   )}
