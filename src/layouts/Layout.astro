@@ -4,7 +4,42 @@ import Navbar from "../components/NavBar.astro";
 const { title } = Astro.props;
 ---
 
-<!doctype html>
+<script>
+	// If the browser is in french, replace all local links with /fr/ in front and redirect to /fr/ as well
+
+	document.addEventListener("DOMContentLoaded", () => {
+		const userLang = navigator.language.split("-")[0]; // Get "fr" or "en"
+		const supportedLangs = ["fr", "en"];
+		var lang = supportedLangs.includes(userLang) ? userLang : "en"; // Default to "en"
+
+		document.querySelectorAll("[href]").forEach((el) => {
+			const originalHref = el.getAttribute("href");
+			const anchor = el as HTMLAnchorElement;
+
+			// Ensure it does not already have a language prefix
+			if (
+				originalHref &&
+				originalHref.startsWith("/") &&
+				!originalHref.startsWith("/fr/") &&
+				!originalHref.startsWith("/en/")
+			) {
+				// If the language is 'en', don't add the '/en/' prefix
+				if (lang === "fr") anchor.href = `/${lang}${originalHref}`;
+			}
+		});
+
+		// Redirect only if there's no language in the URL
+		if (
+			!window.location.pathname.startsWith("/fr/") &&
+			!window.location.pathname.startsWith("/en/")
+		) {
+			// If language is 'en', don't add '/en/' to the URL
+			if (lang === "fr")
+				window.location.href = `/${lang}${window.location.pathname}`;
+		}
+	});
+</script>
+
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />

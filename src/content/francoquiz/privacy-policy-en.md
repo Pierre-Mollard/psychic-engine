@@ -1,4 +1,4 @@
-# Test privacy policy IN FRENCH
+# Test privacy policy IN ENGLISH
 
 [Link text Here](https://anvilproject.org/guides/content/creating-links)
 

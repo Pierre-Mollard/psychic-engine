@@ -1,7 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getUserLanguage } from "../../utils/lang.ts";
-import { Content } from "../../content/francoquiz/privacy-policy-en.md";
+import Layout from "../../../layouts/Layout.astro";
+import { getUserLanguage } from "../../../utils/lang.ts";
+import { Content } from "../../../content/francoquiz/privacy-policy-fr.md";
 
 const lang = getUserLanguage();
 console.log(lang);
@@ -14,7 +14,7 @@ console.log("Browser language is : ", navigator.language);
         <div
             class="prose prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl"
         >
-            <h1>Privacy Policy</h1>
+            <h1>Privacy Policy FR</h1>
             <Content />
         </div>
 

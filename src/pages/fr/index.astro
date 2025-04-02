@@ -1,15 +1,15 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
-import Layout from "../layouts/Layout.astro";
-import AppCard from "../components/AppCard.astro";
-import checkItLogo from "../assets/applis/checkit.png";
-import francoQuizLogo from "../assets/applis/francoquiz.png";
+import Layout from "../../layouts/Layout.astro";
+import AppCard from "../../components/AppCard.astro";
+import checkItLogo from "../../assets/applis/checkit.png";
+import francoQuizLogo from "../../assets/applis/francoquiz.png";
 
 // TODO : remove
 console.log("Browser language is : ", navigator.language);
 ---
 
 <Layout title="Pierre Mollard">
+	<p class="text-4xl">FR</p>
 	<div class="flex flex-grow items-center justify-center w-full">
 		<div
 			class="w-full max-w-4xl bg-blue-200 p-4 rounded-2xl shadow-lg bg-opacity-40 backdrop-blur-lg"

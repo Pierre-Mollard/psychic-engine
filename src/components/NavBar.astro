@@ -27,11 +27,11 @@ const currentPath = Astro.url.pathname;
 
 // Determine the active tab
 let activeTab = "";
-if (currentPath.startsWith("/check-it/")) {
+if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it/") || currentPath.startsWith("/en/check-it/")) {
     activeTab = "Check-It";
-} else if (currentPath.startsWith("/francoquiz/")) {
+} else if (currentPath.startsWith("/francoquiz/") || currentPath.startsWith("/fr/francoquiz/") || currentPath.startsWith("/en/francoquiz/")) {
     activeTab = "FrancoQuiz";
-} else if (currentPath.startsWith("/contact/")) {
+} else if (currentPath.startsWith("/contact/") || currentPath.startsWith("/fr/contact/") || currentPath.startsWith("/en/contact/")) {
     activeTab = "Contact";
 } else {
     activeTab = "Main Menu";
