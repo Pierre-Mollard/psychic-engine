@@ -8,9 +8,18 @@ const { title } = Astro.props;
 	// If the browser is in french, replace all local links with /fr/ in front and redirect to /fr/ as well
 
 	document.addEventListener("DOMContentLoaded", () => {
-		const userLang = navigator.language.split("-")[0]; // Get "fr" or "en"
+		const userLang = navigator.language.split("-")[0];
 		const supportedLangs = ["fr", "en"];
-		var lang = supportedLangs.includes(userLang) ? userLang : "en"; // Default to "en"
+		var lang = supportedLangs.includes(userLang) ? userLang : "en";
+
+		// TODO : remove logs
+		console.log("Browser language is : ", userLang);
+		const isDarkMode = window.matchMedia(
+			"(prefers-color-scheme: dark)",
+		).matches;
+		console.log(
+			isDarkMode ? "Dark mode is enabled" : "Light mode is enabled",
+		);
 
 		document.querySelectorAll("[href]").forEach((el) => {
 			const originalHref = el.getAttribute("href");
@@ -48,7 +57,9 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col min-h-screen bg-gray-100 text-gray-900">
+	<body
+		class="flex flex-col min-h-screen bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark"
+	>
 		<Navbar />
 		<main class="flex-grow w-full flex flex-col">
 			<slot />

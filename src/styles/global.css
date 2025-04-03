@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
+
+/* Default light mode colors */
+@theme {
+    --color-navbar: oklch(0.51 0.2009 261.03);
+    --color-navbar-dark: oklch(0.34 0.1083 260.4);
+    --color-surface: oklch(0.81 0.0143 258.35);
+    --color-surface-dark: oklch(0.34 0.0081 255.55);
+    --color-on-surface: oklch(0.34 0.0081 255.55);
+    --color-on-surface-dark: oklch(0.81 0.0143 258.35);
+}
