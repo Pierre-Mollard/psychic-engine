@@ -37,6 +37,21 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
     activeTab = "Main Menu";
 }
 ---
+<style>
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+  }
+  .pop-hover {
+    display: inline-block;
+  }
+
+  .pop-hover:hover {
+    animation: pop 0.3s ease-in-out;
+  }
+</style>
+
 <nav class="bg-gray-800">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -68,7 +83,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                   <div class="relative group">
                     <a
                       href={link.href}
-                      class={clsx("px-3 py-2 text-sm font-medium rounded-md", activeTab === link.name
+                      class={clsx("relative px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ease-in-out pop-hover", activeTab === link.name
                           ? "bg-gray-900 text-white"
                           : "text-gray-300 hover:bg-gray-700 hover:text-white")}
                     >
@@ -81,7 +96,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                    pointer-events-none group-hover:opacity-100 group-hover:scale-100 
                    group-hover:pointer-events-auto z-20">
                       {link.dropdown.map(sub => (
-                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md">{sub.name}</a>
+                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">{sub.name}</a>
                       ))}
                     </div>
                   )}
@@ -89,6 +104,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
               ))}
             </div>
           </div>
+
       </div>
 
       <!-- Profile -->
