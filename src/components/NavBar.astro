@@ -46,6 +46,9 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
   .pop-hover {
     display: inline-block;
   }
+  .no-pop-hover {
+    display: inline-block;
+  }
 
   .pop-hover:hover {
     animation: pop 0.3s ease-in-out;
@@ -82,21 +85,21 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                 {links.map((link: Link) => (
                   <div class="relative group">
                     <a
-                      href={link.href}
-                      class={clsx("relative px-3 py-2 text-sm font-medium rounded-md transition-all duration-200 ease-in-out pop-hover", activeTab === link.name
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white")}
+                      href={activeTab === link.name ? undefined : link.href}
+                      class={clsx("relative px-3 py-2 text-sm font-medium rounded-md", activeTab === link.name
+                          ? "bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark no-pop-hover pointer-events-auto cursor-default"
+                          : "text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark transition-all duration-200 ease-in-out pop-hover")}
                     >
                       {link.name}
                       <span class="absolute inset-0 -m-2"></span> 
                     </a>
                   <!-- Dropdown -->
                   {link.dropdown && (
-                    <div class="absolute left-0 w-48 mt-2 bg-white text-gray-800 rounded-md shadow-lg opacity-0 scale-95 transition-all duration-200 ease-in-out 
+                    <div class="absolute left-0 w-48 mt-2 bg-navbar-dropdown-bg dark:bg-navbar-dropdown-bg-dark text-on-surface dark:text-on-surface-dark rounded-md shadow-lg opacity-0 scale-95 transition-all duration-200 ease-in-out 
                    pointer-events-none group-hover:opacity-100 group-hover:scale-100 
                    group-hover:pointer-events-auto z-20">
                       {link.dropdown.map(sub => (
-                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md transition-all duration-200 ease-in-out">{sub.name}</a>
+                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out">{sub.name}</a>
                       ))}
                     </div>
                   )}
