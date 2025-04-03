@@ -73,10 +73,13 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                           : "text-gray-300 hover:bg-gray-700 hover:text-white")}
                     >
                       {link.name}
+                      <span class="absolute inset-0 -m-2"></span> 
                     </a>
                   <!-- Dropdown -->
                   {link.dropdown && (
-                    <div class="absolute left-0 w-48 mt-2 bg-white text-gray-800 rounded-md shadow-lg hidden group-hover:block group-hover:z-20 z-20">
+                    <div class="absolute left-0 w-48 mt-2 bg-white text-gray-800 rounded-md shadow-lg opacity-0 scale-95 transition-all duration-200 ease-in-out 
+                   pointer-events-none group-hover:opacity-100 group-hover:scale-100 
+                   group-hover:pointer-events-auto z-20">
                       {link.dropdown.map(sub => (
                         <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-gray-100 rounded-md">{sub.name}</a>
                       ))}
