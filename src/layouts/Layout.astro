@@ -1,8 +1,71 @@
 ---
 import "../styles/global.css";
-import Navbar from "../components/NavBar.astro";
-import AppNavBar from "../components/AppNavBar.astro";
-const { title } = Astro.props;
+import Navbar, { type Link } from "../components/NavBar.astro";
+const { title, lang } = Astro.props;
+
+var links: Link[] = [
+	{ name: "Home", href: "/" },
+	{
+		name: "Check-It",
+		href: "/check-it/check-it",
+		dropdown: [
+			{ name: "Privacy Policy", href: "/check-it/privacy-policy" },
+			{ name: "Terms & Conditions", href: "/check-it/terms-conditions" },
+			{ name: "Delete Account", href: "/check-it/delete-account" },
+		],
+	},
+	{
+		name: "FrancoQuiz",
+		href: "/francoquiz/francoquiz",
+		dropdown: [
+			{ name: "Privacy Policy", href: "/francoquiz/privacy-policy" },
+			{
+				name: "Terms & Conditions",
+				href: "/francoquiz/terms-conditions",
+			},
+		],
+	},
+	{ name: "Contact", href: "/contact/" },
+];
+
+if (lang === "fr") {
+	links = [
+		{ name: "Accueil", href: "/" },
+		{
+			name: "Check-It",
+			href: "/check-it/check-it",
+			dropdown: [
+				{
+					name: "Politique de Confidentialité",
+					href: "/check-it/privacy-policy",
+				},
+				{
+					name: "Conditions Générales",
+					href: "/check-it/terms-conditions",
+				},
+				{
+					name: "Supprimer votre compte",
+					href: "/check-it/delete-account",
+				},
+			],
+		},
+		{
+			name: "FrancoQuiz",
+			href: "/francoquiz/francoquiz",
+			dropdown: [
+				{
+					name: "Politique de Confidentialité",
+					href: "/francoquiz/privacy-policy",
+				},
+				{
+					name: "Conditions Générales",
+					href: "/francoquiz/terms-conditions",
+				},
+			],
+		},
+		{ name: "Contact", href: "/contact/" },
+	];
+}
 ---
 
 <script>
@@ -12,15 +75,6 @@ const { title } = Astro.props;
 		const userLang = navigator.language.split("-")[0];
 		const supportedLangs = ["fr", "en"];
 		var lang = supportedLangs.includes(userLang) ? userLang : "en";
-
-		// TODO : remove logs
-		console.log("Browser language is : ", userLang);
-		const isDarkMode = window.matchMedia(
-			"(prefers-color-scheme: dark)",
-		).matches;
-		console.log(
-			isDarkMode ? "Dark mode is enabled" : "Light mode is enabled",
-		);
 
 		document.querySelectorAll("[href]").forEach((el) => {
 			const originalHref = el.getAttribute("href");
@@ -67,8 +121,7 @@ const { title } = Astro.props;
 	<body
 		class="flex flex-col min-h-screen bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark"
 	>
-		<Navbar />
-		<AppNavBar />
+		<Navbar links={links} />
 		<main class="flex-grow w-full flex flex-col">
 			<slot />
 		</main>

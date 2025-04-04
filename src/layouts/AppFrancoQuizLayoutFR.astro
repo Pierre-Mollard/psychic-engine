@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import AppNavBar, { type SpecificLink } from "../components/AppNavBar.astro";
+import Layout from "./Layout.astro";
+
+const links: SpecificLink[] = [
+	{ name: "Présentation", href: "/francoquiz/francoquiz" },
+	{
+		name: "Politique de Confidentialité",
+		href: "/francoquiz/privacy-policy",
+	},
+	{ name: "Conditions Générales", href: "/francoquiz/terms-conditions" },
+];
+---
+
+<Layout title="FrancoQuiz" lang="fr">
+	<AppNavBar links={links} />
+	<main class="flex-grow w-full flex flex-col">
+		<slot />
+	</main>
+</Layout>

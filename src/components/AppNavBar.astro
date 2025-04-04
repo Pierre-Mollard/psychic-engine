@@ -1,13 +1,10 @@
 ---
 import clsx from "clsx";
-
-type SpecificLink = { name: string; href: string }[];
-const links: SpecificLink = [
-    { name: "Presentation", href: "/check-it/check-it" },
-    { name: "Privacy Policy", href: "/check-it/privacy-policy" },
-    { name: "Terms & Conditions", href: "/check-it/terms-conditions" },
-    { name: "Delete Account", href: "/check-it/delete-account" },
-];
+export type SpecificLink = { name: string; href: string };
+export interface Props {
+    links: SpecificLink[];
+}
+const { links } = Astro.props;
 
 const currentSubPath = Astro.url.pathname;
 
