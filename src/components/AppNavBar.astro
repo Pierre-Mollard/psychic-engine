@@ -1,42 +1,55 @@
-<!-- Separator -->
-<div
-    class="text-sm font-medium text-center text-gray-500 border-b border-gray-800"
->
-    <ul class="flex flex-wrap -mb-px">
-        <li class="mr-2">
-            <a
-                href="#"
-                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-            >
-                Home
-            </a>
-        </li>
-        <li class="mr-2">
-            <a
-                href="#"
-                class="inline-block p-4 text-purple-600 border-b-2 border-purple-600 rounded-t-lg active"
-                aria-current="page"
-            >
-                Calendar
-            </a>
-        </li>
-        <li class="mr-2">
-            <a
-                href="#"
-                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-            >
-                Results
-            </a>
-        </li>
-        <li class="mr-2">
-            <a
-                href="#"
-                class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300"
-            >
-                Live
-            </a>
-        </li>
-    </ul>
+---
+import clsx from "clsx";
+
+type SpecificLink = { name: string; href: string }[];
+const links: SpecificLink = [
+    { name: "Presentation", href: "/check-it/check-it" },
+    { name: "Privacy Policy", href: "/check-it/privacy-policy" },
+    { name: "Terms & Conditions", href: "/check-it/terms-conditions" },
+    { name: "Delete Account", href: "/check-it/delete-account" },
+];
+
+const currentSubPath = Astro.url.pathname;
+
+// Determine the active tab
+let activeTab = "";
+for (const link of links) {
+    if (currentSubPath.endsWith(link.href)) {
+        activeTab = link.name;
+        break;
+    }
+}
+---
+
+<div class="pb-3w-full pb-3">
+    <!-- Centered content area with margin on sides -->
+    <div
+        class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 border-b border-gray-800"
+    >
+        <ul
+            class="flex flex-nowrap -mb-px overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent"
+        >
+            {
+                links.map((link) => (
+                    <div class="mr-2 ">
+                        <a
+                            href={
+                                activeTab === link.name ? undefined : link.href
+                            }
+                            class={clsx(
+                                "inline-block p-4 whitespace-nowrap rounded-t-lg border-b-2 ",
+                                activeTab === link.name
+                                    ? "text-tabbar-primary dark:text-tabbar-primary-dark border-tabbar-primary dark:border-tabbar-primary-dark active"
+                                    : "border-transparent hover:text-tabbar-hover-primary dark:hover:text-tabbar-hover-primary-dark hover:border-tabbar-hover-primary dark:hover:border-tabbar-hover-primary-dark",
+                            )}
+                        >
+                            {link.name}
+                        </a>
+                    </div>
+                ))
+            }
+        </ul>
+    </div>
 </div>
 
 <!-- Separator -->

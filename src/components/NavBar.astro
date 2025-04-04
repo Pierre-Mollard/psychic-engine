@@ -86,7 +86,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                   <div class="relative group">
                     <a
                       href={activeTab === link.name ? undefined : link.href}
-                      class={clsx("relative px-3 py-2 text-sm font-medium rounded-md", activeTab === link.name
+                      class={clsx("relative px-3 py-2 text-base font-medium rounded-md", activeTab === link.name
                           ? "bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark no-pop-hover pointer-events-auto cursor-default"
                           : "text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark transition-all duration-200 ease-in-out pop-hover")}
                     >
@@ -99,7 +99,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                    pointer-events-none group-hover:opacity-100 group-hover:scale-100 
                    group-hover:pointer-events-auto z-20">
                       {link.dropdown.map(sub => (
-                        <a href={sub.href} class="block px-4 py-2 text-sm hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out">{sub.name}</a>
+                        <a href={sub.href} class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out">{sub.name}</a>
                       ))}
                     </div>
                   )}
@@ -124,9 +124,9 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
   <div id="mobile-menu" class="sm:hidden hidden px-2 pt-2 pb-3 space-y-1 z-20">
     {links.map((link: Link) => (
       <a
-        href={link.href}
+      href={activeTab === link.name ? undefined : link.href}
         class={clsx("block rounded-md px-3 py-2 text-base font-medium", activeTab === link.name
-            ? "bg-gray-900 text-white"
+            ? "bg-gray-900 text-white cursor-default"
             : "text-gray-300 hover:bg-gray-700 hover:text-white")}
       >
         {link.name}
