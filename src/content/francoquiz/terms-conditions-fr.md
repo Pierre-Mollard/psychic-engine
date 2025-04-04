@@ -12,7 +12,7 @@ Veuillez noter que l'Application utilise des services tiers qui ont leurs propre
 
 - [Google Play Services](https://policies.google.com/privacy)
 
-- [AdMob](https://support.google.com/admob/answer/6128543?hl=en)
+- [AdMob](https://support.google.com/admob/answer/6128543)
 
 Veuillez être conscient que le Fournisseur de Service n'est pas responsable de certains aspects. Certaines fonctionnalités de l'Application nécessitent une connexion Internet active, qu'elle soit Wi-Fi ou fournie par votre opérateur mobile. Le Fournisseur de Service ne peut être tenu responsable si l'Application ne fonctionne pas pleinement en raison d'un manque d'accès au Wi-Fi ou si votre forfait de données est épuisé.
 

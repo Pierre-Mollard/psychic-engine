@@ -40,7 +40,7 @@ Please note that the Application utilizes third-party services that have their o
 
 - [Google Play Services](https://policies.google.com/privacy)
 
-- [AdMob](https://support.google.com/admob/answer/6128543?hl=en)
+- [AdMob](https://support.google.com/admob/answer/6128543)
 
 
 The Service Provider may disclose User Provided and Automatically Collected Information:

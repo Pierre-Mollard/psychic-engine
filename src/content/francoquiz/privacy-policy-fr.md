@@ -34,15 +34,15 @@ Veuillez noter que l'Application utilise des services tiers ayant leur propre po
 
 - [Google Play Services](https://policies.google.com/privacy)
 
-- [AdMob](https://support.google.com/admob/answer/6128543?hl=en)
+- [AdMob](https://support.google.com/admob/answer/6128543)
 
 Le Prestataire de Service peut divulguer les informations fournies par l'utilisateur et les informations collectées automatiquement :
 
-- Conformément à la loi, par exemple pour se conformer à une assignation à comparaître ou à un processus judiciaire similaire.
+- conformément à la loi, par exemple pour se conformer à une assignation à comparaître ou à un processus judiciaire similaire.
 
-- Lorsqu'il estime de bonne foi que la divulgation est nécessaire pour protéger ses droits, assurer votre sécurité ou celle des autres, enquêter sur une fraude ou répondre à une demande gouvernementale.
+- lorsqu'il estime de bonne foi que la divulgation est nécessaire pour protéger ses droits, assurer votre sécurité ou celle des autres, enquêter sur une fraude ou répondre à une demande gouvernementale.
 
-- Avec ses prestataires de services de confiance qui agissent en son nom, n'ont pas d'utilisation indépendante des informations divulguées et ont accepté de respecter les règles énoncées dans cette politique de confidentialité.
+- avec ses prestataires de services de confiance qui agissent en son nom, n'ont pas d'utilisation indépendante des informations divulguées et ont accepté de respecter les règles énoncées dans cette politique de confidentialité.
 
 ## Droits de Désinscription
 

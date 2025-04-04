@@ -1,6 +1,6 @@
 # Terms & Conditions
 
-These terms and conditions apply to the FrancoQuiz app (hereby referred to as "Application") for mobile devices that was created by Pierre Mollard (hereby referred to as "Service Provider") as an Ad Supported service.
+These terms and conditions applies to the Check-It app (hereby referred to as "Application") for mobile devices that was created by Pierre Mollard (hereby referred to as "Service Provider") as a Free service.
 
 
 Upon downloading or utilizing the Application, you are automatically agreeing to the following terms. It is strongly advised that you thoroughly read and understand these terms prior to using the Application. Unauthorized copying, modification of the Application, any part of the Application, or our trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.
@@ -16,6 +16,10 @@ Please note that the Application utilizes third-party services that have their o
 - [Google Play Services](https://policies.google.com/privacy)
 
 - [AdMob](https://support.google.com/admob/answer/6128543)
+
+- [Google Analytics for Firebase](https://firebase.google.com/support/privacy)
+
+- [Firebase Crashlytics](https://firebase.google.com/support/privacy)
 
 
 Please be aware that the Service Provider does not assume responsibility for certain aspects. Some functions of the Application require an active internet connection, which can be Wi-Fi or provided by your mobile network provider. The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance.
@@ -38,7 +42,7 @@ The Service Provider may wish to update the application at some point. The appli
 The Service Provider may periodically update their Terms and Conditions. Therefore, you are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page.
 
 
-These terms and conditions are effective as of 2025-03-25
+These terms and conditions are effective as of 2025-01-01
 
 
 ## Contact Us
