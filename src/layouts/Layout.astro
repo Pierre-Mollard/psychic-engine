@@ -4,9 +4,10 @@ import Navbar, { type Link } from "../components/NavBar.astro";
 const { title, lang } = Astro.props;
 
 var links: Link[] = [
-	{ name: "Home", href: "/" },
+	{ name: "Home", key: "Home", href: "/" },
 	{
 		name: "Check-It",
+		key: "Check-It",
 		href: "/check-it/check-it",
 		dropdown: [
 			{ name: "Privacy Policy", href: "/check-it/privacy-policy" },
@@ -16,6 +17,7 @@ var links: Link[] = [
 	},
 	{
 		name: "FrancoQuiz",
+		key: "FrancoQuiz",
 		href: "/francoquiz/francoquiz",
 		dropdown: [
 			{ name: "Privacy Policy", href: "/francoquiz/privacy-policy" },
@@ -25,14 +27,15 @@ var links: Link[] = [
 			},
 		],
 	},
-	{ name: "Contact", href: "/contact/" },
+	{ name: "Contact", key: "Contact", href: "/contact/" },
 ];
 
 if (lang === "fr") {
 	links = [
-		{ name: "Accueil", href: "/" },
+		{ name: "Accueil", key: "Home", href: "/" },
 		{
 			name: "Check-It",
+			key: "Check-It",
 			href: "/check-it/check-it",
 			dropdown: [
 				{
@@ -51,6 +54,7 @@ if (lang === "fr") {
 		},
 		{
 			name: "FrancoQuiz",
+			key: "FrancoQuiz",
 			href: "/francoquiz/francoquiz",
 			dropdown: [
 				{
@@ -63,7 +67,6 @@ if (lang === "fr") {
 				},
 			],
 		},
-		{ name: "Contact", href: "/contact/" },
 	];
 }
 ---
