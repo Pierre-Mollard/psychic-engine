@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../components/NavBar.astro";
+import AppNavBar from "../components/AppNavBar.astro";
 const { title } = Astro.props;
 ---
 
@@ -61,6 +62,7 @@ const { title } = Astro.props;
 		class="flex flex-col min-h-screen bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark"
 	>
 		<Navbar />
+		<AppNavBar />
 		<main class="flex-grow w-full flex flex-col">
 			<slot />
 		</main>
