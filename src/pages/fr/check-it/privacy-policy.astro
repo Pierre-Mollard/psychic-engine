@@ -1,9 +1,13 @@
 ---
+import MarkDownViewer from "../../../components/MarkDownViewer.astro";
+import { Content } from "../../../content/check-it/privacy-policy-fr.md";
 import AppCheckItLayoutFR from "../../../layouts/AppCheckItLayoutFR.astro";
 ---
 
 <AppCheckItLayoutFR>
-    <h1>Privacy Policy FR</h1>
-    <p>This is our privacy policy.</p>
-    <a href="/">Back to Home</a>
+    <MarkDownViewer
+        title="Privacy Policy FR"
+        back="Retour accueil"
+        content={Content}
+    />
 </AppCheckItLayoutFR>

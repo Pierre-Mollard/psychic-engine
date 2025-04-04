@@ -1,9 +1,13 @@
 ---
+import MarkDownViewer from "../../components/MarkDownViewer.astro";
+import { Content } from "../../content/check-it/delete-account-en.md";
 import AppCheckItLayout from "../../layouts/AppCheckItLayout.astro";
 ---
 
 <AppCheckItLayout>
-    <h1>Delete Account</h1>
-    <p>TODO.</p>
-    <a href="/">Back to Home</a>
+    <MarkDownViewer
+        title="Tsdfsdqfsdqfsdsfdf"
+        back="Back Home"
+        content={Content}
+    />
 </AppCheckItLayout>

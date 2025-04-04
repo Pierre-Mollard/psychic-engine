@@ -1,9 +1,13 @@
 ---
+import MarkDownViewer from "../../../components/MarkDownViewer.astro";
+import { Content } from "../../../content/check-it/delete-account-fr.md";
 import AppCheckItLayoutFR from "../../../layouts/AppCheckItLayoutFR.astro";
 ---
 
 <AppCheckItLayoutFR>
-    <h1>Delete Account FR</h1>
-    <p>TODO.</p>
-    <a href="/">Back to Home</a>
+    <MarkDownViewer
+        title="Privacy Policy FR"
+        back="Retour accueil"
+        content={Content}
+    />
 </AppCheckItLayoutFR>

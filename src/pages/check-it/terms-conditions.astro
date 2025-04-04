@@ -1,9 +1,13 @@
 ---
+import MarkDownViewer from "../../components/MarkDownViewer.astro";
+import { Content } from "../../content/check-it/terms-conditions-en.md";
 import AppCheckItLayout from "../../layouts/AppCheckItLayout.astro";
 ---
 
 <AppCheckItLayout>
-    <h1>Terms & Conditions</h1>
-    <p>This is our termas & conditions.</p>
-    <a href="/">Back to Home</a>
+    <MarkDownViewer
+        title="Tsdfsdqfsdqfsdsfdf"
+        back="Back Home"
+        content={Content}
+    />
 </AppCheckItLayout>

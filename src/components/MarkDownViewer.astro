@@ -1,0 +1,26 @@
+---
+export interface Props {
+    title: string;
+    back: string;
+    content: any;
+}
+const { title, back, content: Content } = Astro.props;
+---
+
+<div class="pb-3w-full pb-3">
+    <!-- Centered content area with margin on sides -->
+    <div
+        class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 border-b border-gray-800"
+    >
+        <div class="m-4">
+            <div
+                class="prose prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl"
+            >
+                <h1>{title}</h1>
+                <Content />
+            </div>
+
+            <a href="/">{back}</a>
+        </div>
+    </div>
+</div>

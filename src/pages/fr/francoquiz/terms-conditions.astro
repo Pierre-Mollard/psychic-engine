@@ -1,9 +1,13 @@
 ---
+import MarkDownViewer from "../../../components/MarkDownViewer.astro";
+import { Content } from "../../../content/francoquiz/terms-conditions-fr.md";
 import AppFrancoQuizLayoutFR from "../../../layouts/AppFrancoQuizLayoutFR.astro";
 ---
 
 <AppFrancoQuizLayoutFR>
-    <h1>Terms & Conditions FR</h1>
-    <p>This is our termas & conditions.</p>
-    <a href="/">Back to Home</a>
+    <MarkDownViewer
+        title="Tsdfsdqfsdqfsdsfdf FR"
+        back="Retour accueil"
+        content={Content}
+    />
 </AppFrancoQuizLayoutFR>
