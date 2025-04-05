@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "copy CNAME dist\\CNAME && copy app-ads.txt dist\\app-ads.txt",
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "gh-pages -d dist"
