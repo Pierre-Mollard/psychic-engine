@@ -1,6 +1,6 @@
 ---
 import clsx from "clsx";
-export type SpecificLink = { name: string; href: string };
+export type SpecificLink = { name: string; href: string; key: string };
 export interface Props {
     links: SpecificLink[];
 }
@@ -12,11 +12,11 @@ const currentSubPath = Astro.url.pathname;
 let activeTab = "";
 for (const link of links) {
     if (currentSubPath.endsWith(link.href)) {
-        activeTab = link.name;
+        activeTab = link.key;
         break;
     }
 }
-if (activeTab === "" && links.length > 0) activeTab = links[0].name;
+if (activeTab === "" && links.length > 0) activeTab = links[0].key;
 ---
 
 <style>
@@ -40,11 +40,11 @@ if (activeTab === "" && links.length > 0) activeTab = links[0].name;
                     <div class="mr-2 top-scrollbars-fix">
                         <a
                             href={
-                                activeTab === link.name ? undefined : link.href
+                                activeTab === link.key ? undefined : link.href
                             }
                             class={clsx(
                                 "inline-block p-4 whitespace-nowrap rounded-t-lg border-b-2 ",
-                                activeTab === link.name
+                                activeTab === link.key
                                     ? "text-tabbar-primary dark:text-tabbar-primary-dark border-tabbar-primary dark:border-tabbar-primary-dark active"
                                     : "border-transparent hover:text-tabbar-hover-primary dark:hover:text-tabbar-hover-primary-dark hover:border-tabbar-hover-primary dark:hover:border-tabbar-hover-primary-dark",
                             )}

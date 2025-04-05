@@ -1,0 +1,156 @@
+---
+import logoImage from "../assets/Website_Logo_Combined.png";
+import logoImageDark from "../assets/Website_Logo_Combined_Dark.png";
+export interface Props {
+    title: string;
+    description: string;
+    footer: string;
+}
+const { title, description, footer } = Astro.props;
+---
+
+<style>
+    @keyframes glitch {
+        0% {
+            transform: translate(0);
+        }
+        20% {
+            transform: translate(-5px, 0) skew(0.5deg);
+        }
+        40% {
+            transform: translate(5px, 0) skew(-0.5deg);
+        }
+        60% {
+            transform: translate(-3px, 0) skew(0.3deg);
+        }
+        80% {
+            transform: translate(0.5px, -0.5px) skew(-0.3deg);
+        }
+        100% {
+            transform: translate(0);
+        }
+    }
+
+    /* Glitchy class */
+    .glitchy {
+        position: relative;
+        animation: glitch 1.5s infinite;
+        filter: brightness(1) contrast(1) hue-rotate(0deg);
+        will-change: transform, filter;
+    }
+
+    /* Add RGB split effect using filters */
+    .glitchy::before,
+    .glitchy::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: inherit;
+        clip-path: inset(0 0 0 0);
+        filter: brightness(1.1) contrast(1.5) hue-rotate(180deg);
+        animation: rgb-split 1.5s infinite;
+    }
+
+    /* RGB Split animation for creating distortion effect */
+    @keyframes rgb-split {
+        0% {
+            clip-path: inset(0 0 0 0);
+            transform: translate(0);
+        }
+        25% {
+            clip-path: inset(0 0 0 10%);
+            transform: translate(-5px, 0);
+        }
+        50% {
+            clip-path: inset(0 0 0 15%);
+            transform: translate(5px, 0);
+        }
+        75% {
+            clip-path: inset(0 0 0 5%);
+            transform: translate(-5px, 0);
+        }
+        100% {
+            clip-path: inset(0 0 0 0);
+            transform: translate(0);
+        }
+    }
+</style>
+
+<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-2.5">
+    <div
+        class="flex flex-col md:flex-row items-center md:items-start gap-8 py-12"
+    >
+        <!-- Left Side Image -->
+        <div class="w-full md:w-1/2 flex justify-center">
+            <picture>
+                <!-- Dark mode image -->
+                <source
+                    srcset={logoImageDark.src}
+                    media="(prefers-color-scheme: dark)"
+                />
+                <!-- Light mode fallback -->
+                <img
+                    class="glitchy max-w-full h-auto rounded-xl"
+                    src={logoImage.src}
+                    alt="Contact Illustration"
+                />
+            </picture>
+        </div>
+
+        <!-- Right Side Content -->
+        <section
+            class="w-full md:w-1/2 text-md-text dark:text-md-text-dark px-4"
+        >
+            <h1
+                class="text-3xl font-bold mb-6 text-md-heading dark:text-md-heading-dark"
+            >
+                {title}
+            </h1>
+
+            <p class="mb-4">
+                {description}
+            </p>
+
+            <ul class="space-y-3">
+                <li>
+                    <strong>Email:</strong>
+                    <a
+                        href="mailto:pierre.mollard@proton.me"
+                        class="text-md-link dark:text-md-link-dark hover:underline"
+                        >pierre.mollard@proton.me</a
+                    >
+                </li>
+
+                <li>
+                    <strong>GitHub:</strong>
+                    <a
+                        href="https://github.com/Pierre-Mollard"
+                        target="_blank"
+                        class="text-md-link dark:text-md-link-dark hover:underline"
+                    >
+                        github.com/Pierre-Mollard
+                    </a>
+                </li>
+
+                <li>
+                    <strong>Google Play Developer:</strong>
+                    <a
+                        href="https://play.google.com/store/apps/dev?id=5497322522671187431"
+                        target="_blank"
+                        class="text-md-link dark:text-md-link-dark hover:underline"
+                    >
+                        View on Google Play
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-12 text-sm text-gray-500 dark:text-gray-400">
+                {footer}
+            </div>
+        </section>
+    </div>
+</div>

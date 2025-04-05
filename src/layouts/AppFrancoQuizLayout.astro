@@ -4,9 +4,21 @@ import AppNavBar, { type SpecificLink } from "../components/AppNavBar.astro";
 import Layout from "./Layout.astro";
 
 const links: SpecificLink[] = [
-	{ name: "Presentation", href: "/francoquiz/francoquiz" },
-	{ name: "Privacy Policy", href: "/francoquiz/privacy-policy" },
-	{ name: "Terms & Conditions", href: "/francoquiz/terms-conditions" },
+	{
+		name: "Presentation",
+		href: "/francoquiz/francoquiz",
+		key: "Presentation",
+	},
+	{
+		name: "Privacy Policy",
+		href: "/francoquiz/privacy-policy",
+		key: "Privacy",
+	},
+	{
+		name: "Terms & Conditions",
+		href: "/francoquiz/terms-conditions",
+		key: "Terms",
+	},
 ];
 ---
 

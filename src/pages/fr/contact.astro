@@ -1,9 +1,12 @@
 ---
+import ContactCard from "../../components/ContactCard.astro";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Contact" lang="fr">
-    <h1>Contact FR</h1>
-    <p>TODO.</p>
-    <a href="/">Back to Home</a>
+    <ContactCard
+        title="Me Contacter"
+        description="N'hésitez pas à me contacter pour une collaboration, une question ou simplement pour dire bonjour !"
+        footer="Je ferai de mon mieux pour vous répondre rapidement. Merci de votre visite !"
+    />
 </Layout>

@@ -114,8 +114,16 @@ if (lang === "fr") {
 		<meta name="viewport" content="width=device-width" />
 		<link
 			rel="icon"
-			type="image/svg+xml"
-			href="/favicon.svg"
+			type="image/x-icon"
+			href="/Website_Logo_Combined.ico"
+			media="(prefers-color-scheme: light)"
+			class="no-localization"
+		/>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="/Website_Logo_Combined_Dark.ico"
+			media="(prefers-color-scheme: dark)"
 			class="no-localization"
 		/>
 		<meta name="generator" content={Astro.generator} />
@@ -125,14 +133,26 @@ if (lang === "fr") {
 		class="flex flex-col min-h-screen bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark"
 	>
 		<Navbar links={links} />
-		<main class="flex-grow w-full flex flex-col">
+		<main class="flex-grow w-full flex flex-col overflow-y-auto">
 			<slot />
 		</main>
 	</body>
-	<footer
-		class="mt-16 pt-6 pb-8 text-center text-sm text-on-surface dark:text-on-surface-dark"
-	>
-		© 2025 Pierre Mollard. All rights reserved.
+	<footer>
+		<div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-2.5">
+			<div
+				class="mt-4
+				pt-4
+				text-center
+				text-sm
+				text-on-surface
+				dark:text-on-surface-dark
+				border-t
+				border-on-surface-weak
+				dark:border-on-surface-weak-dark"
+			>
+				© 2025 Pierre Mollard. All rights reserved.
+			</div>
+		</div>
 	</footer>
 </html>
 

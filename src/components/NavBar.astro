@@ -1,5 +1,6 @@
 ---
-import markImage from '../assets/mark.svg';
+import logoImage from '../assets/Website_Logo_Combined.png';
+import logoImageDark from '../assets/Website_Logo_Combined_Dark.png';
 import meImage from '../assets/me.jpg';
 import clsx from 'clsx';
 
@@ -64,12 +65,18 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
 
       <!-- Desktop Menu -->
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-10" >
-
-        <img
-              class="h-8 w-8 mt-1"
-              src={markImage.src}
+        <div class="relative flex items-center h-16">
+          <picture>
+            <!-- Dark mode image -->
+            <source srcset={logoImageDark.src} media="(prefers-color-scheme: dark)" />
+            <!-- Light mode fallback -->
+            <img
+              class="size-8 ml-8"
+              src={logoImage.src}
               alt="Pierre Mollard Image Logo"
-          />
+            />
+          </picture>
+        </div>
       
         <div class="hidden sm:ml-6  sm:flex sm:items-center ">
             <div class="hidden sm:flex space-x-4">
@@ -102,7 +109,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
       </div>
 
       <!-- Profile -->
-      <div class="relative">
+      <div class="relative mr-4">
         <a
           href={activeTab === "Contact" ? undefined : "/contact/"}
           class={clsx(

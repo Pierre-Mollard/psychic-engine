@@ -4,10 +4,18 @@ import AppNavBar, { type SpecificLink } from "../components/AppNavBar.astro";
 import Layout from "./Layout.astro";
 
 const links: SpecificLink[] = [
-	{ name: "Presentation", href: "/check-it/check-it" },
-	{ name: "Privacy Policy", href: "/check-it/privacy-policy" },
-	{ name: "Terms & Conditions", href: "/check-it/terms-conditions" },
-	{ name: "Delete Account", href: "/check-it/delete-account" },
+	{ name: "Presentation", href: "/check-it/check-it", key: "Presentation" },
+	{
+		name: "Privacy Policy",
+		href: "/check-it/privacy-policy",
+		key: "Privacy",
+	},
+	{
+		name: "Terms & Conditions",
+		href: "/check-it/terms-conditions",
+		key: "Terms",
+	},
+	{ name: "Delete Account", href: "/check-it/delete-account", key: "Delete" },
 ];
 ---
 
