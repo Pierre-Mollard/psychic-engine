@@ -1,9 +1,15 @@
 ---
+import AppPresentation from "../../../components/AppPresentation.astro";
 import AppFrancoQuizLayoutFR from "../../../layouts/AppFrancoQuizLayoutFR.astro";
 ---
 
 <AppFrancoQuizLayoutFR>
-    <h1>FrancoQuiz FR</h1>
-    <p>This is our FrancoQuiz.</p>
-    <a href="/">Back to Home</a>
+    <AppPresentation
+        title="FrancoQuiz"
+        subtitle="Apprenez les départements français"
+        back="Back to Home"
+        description="This is our Check-It."
+        link="https://play.google.com/store/apps/details?id=com.creepierre.geolearner"
+        image=""
+    />
 </AppFrancoQuizLayoutFR>

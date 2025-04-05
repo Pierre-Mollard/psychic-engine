@@ -1,9 +1,15 @@
 ---
+import AppPresentation from "../../components/AppPresentation.astro";
 import AppCheckItLayout from "../../layouts/AppCheckItLayout.astro";
 ---
 
 <AppCheckItLayout>
-    <h1>Check-It</h1>
-    <p>This is our Check-It.</p>
-    <a href="/">Back to Home</a>
+    <AppPresentation
+        title="Check-It"
+        subtitle="Journal d'objectifs"
+        back="Back to Home"
+        description="This is our Check-It."
+        link="https://play.google.com/store/apps/details?id=com.creepierre.risearc"
+        image=""
+    />
 </AppCheckItLayout>

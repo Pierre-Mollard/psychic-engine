@@ -1,10 +1,13 @@
 ---
 export interface Props {
     title: string;
+    subtitle: string;
     back: string;
-    content: any;
+    description: string;
+    link: string;
+    image: any;
 }
-const { title, back, content: Content } = Astro.props;
+const { title, subtitle, back, description, link, image } = Astro.props;
 ---
 
 <script is:inline>
@@ -40,7 +43,9 @@ const { title, back, content: Content } = Astro.props;
                        prose-strong:text-md-strong dark:prose-strong:text-md-strong-dark
                        prose-"
             >
-                <Content />
+                <h1>{title}</h1>
+                <h2>{subtitle}</h2>
+                <p>{description}</p>
             </div>
 
             <div class="flex justify-end gap-4 mt-10">
