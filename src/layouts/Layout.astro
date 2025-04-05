@@ -88,6 +88,7 @@ if (lang === "fr") {
 				originalHref.startsWith("/") &&
 				!originalHref.startsWith("/fr/") &&
 				!originalHref.startsWith("/en/") &&
+				!originalHref.startsWith("/_astro") &&
 				!el.classList.contains("no-localization")
 			) {
 				// If the language is 'en', don't add the '/en/' prefix
