@@ -2,8 +2,17 @@
 @plugin '@tailwindcss/typography';
 @plugin 'tailwind-scrollbar';
 
-/* Default light mode colors */
 @theme {
+
+    /* General colors */
+    --color-surface: oklch(0.81 0.0143 258.35);
+    --color-surface-dark: oklch(0.34 0.0081 255.55);
+    --color-on-surface: oklch(0.34 0.0081 255.55);
+    --color-on-surface-dark: oklch(0.81 0.0143 258.35);
+    --color-on-surface-weak: oklch(0.54 0.0012 197.12);
+    --color-on-surface-weak-dark: oklch(0.56 0 none);
+
+    /* Navbar-specific colors */
     --color-navbar: oklch(0.64 0.1756 260.55);
     --color-navbar-dark: oklch(0.34 0.1083 260.4);
     --color-navbar-dropdown-bg: oklch(0.8 0.0191 258.36);
@@ -21,13 +30,38 @@
     --color-navbar-menu-bg-hover: oklch(0.72 0.0184 256.31);
     --color-navbar-menu-bg-hover-dark: oklch(0.45 0 none);
 
+    /* Tabbar-specific colors */
     --color-tabbar-primary: oklch(0.39 0.1808 315.76);
     --color-tabbar-primary-dark: oklch(0.46 0.1774 0.54);
     --color-tabbar-hover-primary: oklch(0.55 0.0912 318.23);
     --color-tabbar-hover-primary-dark: oklch(0.64 0.0642 348.8);
 
-    --color-surface: oklch(0.81 0.0143 258.35);
-    --color-surface-dark: oklch(0.34 0.0081 255.55);
-    --color-on-surface: oklch(0.34 0.0081 255.55);
-    --color-on-surface-dark: oklch(0.81 0.0143 258.35);
+
+    /* Markdown-specific colors */
+
+    /* Text body */
+    --color-md-text: oklch(0.2 0.004 258);
+    --color-md-text-dark: oklch(0.9 0.005 258);
+
+    /* Headings */
+    --color-md-heading: oklch(0.1 0.02 260);
+    --color-md-heading-dark: oklch(0.98 0.015 260);
+
+    /* Links */
+    --color-md-link: oklch(0.3 0.15 270);
+    --color-md-link-dark: oklch(0.9 0.12 270);
+    --color-md-link-hover: oklch(0.4 0.2 270);
+    --color-md-link-hover-dark: oklch(1 0.15 270);
+
+    /* Lists and bullets */
+    --color-md-bullet: oklch(0.2 0.01 258);
+    --color-md-bullet-dark: oklch(0.85 0.01 258);
+
+    /* Blockquotes */
+    --color-md-blockquote-border: oklch(0.6 0.01 260);
+    --color-md-blockquote-border-dark: oklch(0.4 0.01 260);
+
+    /* Strong blocks */
+    --color-md-strong: oklch(0.15 0.006 258);
+    --color-md-strong-dark: oklch(0.95 0.006 258); 
 }
