@@ -50,8 +50,10 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## 🍟 Deploy
 
-Run :
+Run:
+**Note: the postbuild should be called after build, check the /dist folder for CNAME and app-ads.txt**
 ```sh
 npm run build
+npm run postbuild
 npm run deploy
 ```
