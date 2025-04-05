@@ -1,0 +1,110 @@
+<!DOCTYPE html><script type="module">document.addEventListener("DOMContentLoaded",()=>{const o=navigator.language.split("-")[0];var n=["fr","en"].includes(o)?o:"en";document.querySelectorAll("[href]").forEach(a=>{const t=a.getAttribute("href"),i=a;t&&t.startsWith("/")&&!t.startsWith("/fr/")&&!t.startsWith("/en/")&&!a.classList.contains("no-localization")&&n==="fr"&&(i.href=`/${n}${t}`)}),!window.location.pathname.startsWith("/fr/")&&!window.location.pathname.startsWith("/en/")&&n==="fr"&&(window.location.href=`/${n}${window.location.pathname}`)});</script> <html lang="en" data-astro-cid-sckkx6r4> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg" class="no-localization"><meta name="generator" content="Astro v5.5.5"><title>FrancoQuiz</title><link rel="stylesheet" href="/_astro/check-it.CBedz5Tb.css">
+<style>ul[data-astro-cid-wmz3jj5o].top-scrollbars,div[data-astro-cid-wmz3jj5o].top-scrollbars-fix{transform:rotateX(180deg)}
+</style></head> <body class="flex flex-col min-h-screen bg-surface dark:bg-surface-dark text-on-surface dark:text-on-surface-dark" data-astro-cid-sckkx6r4> <nav class="bg-navbar dark:bg-navbar-dark " data-astro-cid-ymhdp2rl> <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8" data-astro-cid-ymhdp2rl> <div class="relative flex h-16 items-center justify-between" data-astro-cid-ymhdp2rl> <!-- Mobile menu button --> <button type="button" class="absolute inset-y-0 left-0 flex items-center cursor-pointer sm:hidden p-2 text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-text-hover dark:hover:bg-navbar-menu-text-hover-dark hover:text-navbar-menu-text-active dark:hover:text-navbar-menu-text-active-dark z-20" onclick="toggleMenu()" data-astro-cid-ymhdp2rl> <span class="sr-only" data-astro-cid-ymhdp2rl>Open main menu</span> <svg class="size-6" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5" data-astro-cid-ymhdp2rl> <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" data-astro-cid-ymhdp2rl></path> </svg> </button> <!-- Desktop Menu --> <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-10" data-astro-cid-ymhdp2rl> <img class="h-8 w-8 mt-1" src="/_astro/mark.EeokgJxQ.svg" alt="Pierre Mollard Image Logo" data-astro-cid-ymhdp2rl> <div class="hidden sm:ml-6  sm:flex sm:items-center " data-astro-cid-ymhdp2rl> <div class="hidden sm:flex space-x-4" data-astro-cid-ymhdp2rl> <div class="relative group" data-astro-cid-ymhdp2rl> <a href="/" class="relative px-3 py-2 text-base font-medium rounded-md text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark transition-all duration-200 ease-in-out pop-hover" data-astro-cid-ymhdp2rl> Accueil <span class="absolute inset-0 -m-2" data-astro-cid-ymhdp2rl></span> </a> <!-- Dropdown -->  </div><div class="relative group" data-astro-cid-ymhdp2rl> <a href="/check-it/check-it" class="relative px-3 py-2 text-base font-medium rounded-md text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark transition-all duration-200 ease-in-out pop-hover" data-astro-cid-ymhdp2rl> Check-It <span class="absolute inset-0 -m-2" data-astro-cid-ymhdp2rl></span> </a> <!-- Dropdown --> <div class="absolute left-0 w-48 mt-2 bg-navbar-dropdown-bg dark:bg-navbar-dropdown-bg-dark text-on-surface dark:text-on-surface-dark rounded-md shadow-lg opacity-0 scale-95 transition-all duration-200 ease-in-out 
+                   pointer-events-none group-hover:opacity-100 group-hover:scale-100 
+                   group-hover:pointer-events-auto z-20" data-astro-cid-ymhdp2rl> <a href="/check-it/privacy-policy" class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out" data-astro-cid-ymhdp2rl>Politique de Confidentialité</a><a href="/check-it/terms-conditions" class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out" data-astro-cid-ymhdp2rl>Conditions Générales</a><a href="/check-it/delete-account" class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out" data-astro-cid-ymhdp2rl>Supprimer votre compte</a> </div> </div><div class="relative group" data-astro-cid-ymhdp2rl> <a class="relative px-3 py-2 text-base font-medium rounded-md bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark no-pop-hover pointer-events-auto cursor-default" data-astro-cid-ymhdp2rl> FrancoQuiz <span class="absolute inset-0 -m-2" data-astro-cid-ymhdp2rl></span> </a> <!-- Dropdown --> <div class="absolute left-0 w-48 mt-2 bg-navbar-dropdown-bg dark:bg-navbar-dropdown-bg-dark text-on-surface dark:text-on-surface-dark rounded-md shadow-lg opacity-0 scale-95 transition-all duration-200 ease-in-out 
+                   pointer-events-none group-hover:opacity-100 group-hover:scale-100 
+                   group-hover:pointer-events-auto z-20" data-astro-cid-ymhdp2rl> <a href="/francoquiz/privacy-policy" class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out" data-astro-cid-ymhdp2rl>Politique de Confidentialité</a><a href="/francoquiz/terms-conditions" class="block px-4 py-2 text-base hover:bg-navbar-dropdown-bg-500 dark:hover:bg-navbar-dropdown-bg-500-dark rounded-md transition-all duration-200 ease-in-out" data-astro-cid-ymhdp2rl>Conditions Générales</a> </div> </div> </div> </div> </div> <!-- Profile --> <div class="relative" data-astro-cid-ymhdp2rl> <a href="/contact/" class="flex rounded-full border-2 focus:ring-2 z-20 transition-all duration-200 ease-in-out border-transparent focus:ring-navbar-menu-bg-active dark:focus:ring-navbar-menu-bg-active-dark" data-astro-cid-ymhdp2rl> <img class="size-8 rounded-full" src="/_astro/me.CqgPr_hF.jpg" alt="Profile" data-astro-cid-ymhdp2rl> </a> </div> </div> </div> <!-- Mobile Menu --> <div id="mobile-menu" class="sm:hidden hidden px-2 pt-2 pb-3 space-y-1 z-20" data-astro-cid-ymhdp2rl> <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark" data-astro-cid-ymhdp2rl> Accueil </a><a href="/check-it/check-it" class="block rounded-md px-3 py-2 text-base font-medium text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark" data-astro-cid-ymhdp2rl> Check-It </a><a class="block rounded-md px-3 py-2 text-base font-medium bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark cursor-default" data-astro-cid-ymhdp2rl> FrancoQuiz </a> </div> </nav> <!-- JavaScript --> <script>
+
+  function toggleMenu() {
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (mobileMenu)
+    mobileMenu.classList.toggle("hidden");
+  }
+</script> <main class="flex-grow w-full flex flex-col" data-astro-cid-sckkx6r4>  <div class="pb-3w-full pb-3" data-astro-cid-wmz3jj5o> <!-- Centered content area with margin on sides --> <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 border-b border-on-surface-weak dark:border-on-surface-weak-dark" data-astro-cid-wmz3jj5o> <ul class="top-scrollbars flex flex-nowrap -mb-px overflow-x-auto scrollbar-thin scrollbar-thumb-tabbar-primary dark:scrollbar-thumb-tabbar-primary-dark scrollbar-track-transparent mt-1" data-astro-cid-wmz3jj5o> <div class="mr-2 top-scrollbars-fix" data-astro-cid-wmz3jj5o> <a class="inline-block p-4 whitespace-nowrap rounded-t-lg border-b-2  text-tabbar-primary dark:text-tabbar-primary-dark border-tabbar-primary dark:border-tabbar-primary-dark active" data-astro-cid-wmz3jj5o> Présentation </a> </div><div class="mr-2 top-scrollbars-fix" data-astro-cid-wmz3jj5o> <a href="/francoquiz/privacy-policy" class="inline-block p-4 whitespace-nowrap rounded-t-lg border-b-2  border-transparent hover:text-tabbar-hover-primary dark:hover:text-tabbar-hover-primary-dark hover:border-tabbar-hover-primary dark:hover:border-tabbar-hover-primary-dark" data-astro-cid-wmz3jj5o> Politique de Confidentialité </a> </div><div class="mr-2 top-scrollbars-fix" data-astro-cid-wmz3jj5o> <a href="/francoquiz/terms-conditions" class="inline-block p-4 whitespace-nowrap rounded-t-lg border-b-2  border-transparent hover:text-tabbar-hover-primary dark:hover:text-tabbar-hover-primary-dark hover:border-tabbar-hover-primary dark:hover:border-tabbar-hover-primary-dark" data-astro-cid-wmz3jj5o> Conditions Générales </a> </div> </ul> </div> </div> <main class="flex-grow w-full flex flex-col">  <script>
+    window.addEventListener("scroll", () => {
+        const btn = document.getElementById("scrollToTopBtn");
+        if (window.scrollY > 300) {
+            btn.classList.remove("hidden");
+        } else {
+            btn.classList.add("hidden");
+        }
+    });
+</script> <div class="pb-3w-full pb-3"> <!-- Centered content area with margin on sides --> <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-4 border-b border-on-surface-weak dark:border-on-surface-weak-dark"> <div class="m-4"> <div class="prose max-w-none
+                       prose-img:rounded-xl
+                       prose-p:text-justify
+                       prose-p:text-md-text dark:prose-p:text-md-text-dark
+                       prose-h1:text-md-heading dark:prose-h1:text-md-heading-dark
+                       prose-h2:text-md-heading dark:prose-h2:text-md-heading-dark
+                       prose-h3:text-md-heading dark:prose-h3:text-md-heading-dark
+                       prose-h4:text-md-heading dark:prose-h4:text-md-heading-dark
+                       prose-a:text-md-link dark:prose-a:text-md-link-dark
+                       prose-a:hover:text-md-link-hover dark:prose-a:hover:text-md-link-hover-dark
+                       prose-li:marker:text-md-bullet dark:prose-li:marker:text-md-bullet-dark
+                       prose-blockquote:text-md-blockquote-border dark:prose-blockquote:text-md-blockquote-border-dark
+                       prose-strong:text-md-strong dark:prose-strong:text-md-strong-dark
+                       prose-"> <h1 id="politique-de-confidentialité">Politique de Confidentialité</h1>
+<p>Cette politique de confidentialité s’applique à l’application FrancoQuiz (ci-après dénommée “Application”) pour les appareils mobiles, créée par Pierre Mollard (ci-après dénommé “Prestataire de Service”) en tant que service financé par la publicité. Ce service est fourni “TEL QUEL”.</p>
+<h2 id="collecte-et-utilisation-des-informations">Collecte et Utilisation des Informations</h2>
+<p>L’Application collecte des informations lorsque vous la téléchargez et l’utilisez. Ces informations peuvent inclure :</p>
+<ul>
+<li>
+<p>L’adresse IP de votre appareil (par exemple, adresse IP)</p>
+</li>
+<li>
+<p>Les pages de l’Application que vous visitez, l’heure et la date de votre visite, le temps passé sur ces pages</p>
+</li>
+<li>
+<p>Le temps passé sur l’Application</p>
+</li>
+<li>
+<p>Le système d’exploitation que vous utilisez sur votre appareil mobile</p>
+</li>
+</ul>
+<p>L’Application collecte la localisation de votre appareil afin d’aider le Prestataire de Service à déterminer votre emplacement géographique approximatif et l’utiliser de la manière suivante :</p>
+<ul>
+<li>
+<p><strong>Services de Géolocalisation</strong> : Le Prestataire de Service utilise les données de localisation pour fournir des fonctionnalités telles que du contenu personnalisé, des recommandations pertinentes et des services basés sur la localisation.</p>
+</li>
+<li>
+<p><strong>Analyse et Améliorations</strong> : Les données de localisation agrégées et anonymisées aident le Prestataire de Service à analyser le comportement des utilisateurs, identifier des tendances et améliorer les performances et les fonctionnalités de l’Application.</p>
+</li>
+<li>
+<p><strong>Services Tiers</strong> : Périodiquement, le Prestataire de Service peut transmettre des données de localisation anonymisées à des services externes pour améliorer l’Application et optimiser ses offres.</p>
+</li>
+</ul>
+<p>Le Prestataire de Service peut utiliser les informations que vous fournissez pour vous contacter de temps à autre afin de vous fournir des informations importantes, des notifications nécessaires et des promotions marketing.</p>
+<p>Pour une meilleure expérience d’utilisation de l’Application, le Prestataire de Service peut vous demander de fournir certaines informations personnellement identifiables, y compris, mais sans s’y limiter, l’ID publicitaire, l’adresse IP, les informations sur l’appareil, les données de localisation, l’activité et l’interaction avec l’application, ainsi que les préférences et intérêts des utilisateurs. Les informations collectées seront conservées et utilisées conformément à cette politique de confidentialité.</p>
+<h2 id="accès-par-des-tiers">Accès par des Tiers</h2>
+<p>Seules des données agrégées et anonymisées sont périodiquement transmises à des services externes afin d’aider le Prestataire de Service à améliorer l’Application et son service. Le Prestataire de Service peut partager vos informations avec des tiers de la manière décrite dans cette politique de confidentialité.</p>
+<p>Veuillez noter que l’Application utilise des services tiers ayant leur propre politique de confidentialité concernant le traitement des données. Vous trouverez ci-dessous les liens vers la politique de confidentialité des fournisseurs de services tiers utilisés par l’Application :</p>
+<ul>
+<li>
+<p><a href="https://policies.google.com/privacy">Google Play Services</a></p>
+</li>
+<li>
+<p><a href="https://support.google.com/admob/answer/6128543">AdMob</a></p>
+</li>
+</ul>
+<p>Le Prestataire de Service peut divulguer les informations fournies par l’utilisateur et les informations collectées automatiquement :</p>
+<ul>
+<li>
+<p>conformément à la loi, par exemple pour se conformer à une assignation à comparaître ou à un processus judiciaire similaire.</p>
+</li>
+<li>
+<p>lorsqu’il estime de bonne foi que la divulgation est nécessaire pour protéger ses droits, assurer votre sécurité ou celle des autres, enquêter sur une fraude ou répondre à une demande gouvernementale.</p>
+</li>
+<li>
+<p>avec ses prestataires de services de confiance qui agissent en son nom, n’ont pas d’utilisation indépendante des informations divulguées et ont accepté de respecter les règles énoncées dans cette politique de confidentialité.</p>
+</li>
+</ul>
+<h2 id="droits-de-désinscription">Droits de Désinscription</h2>
+<p>Vous pouvez arrêter toute collecte d’informations par l’Application en la désinstallant. Vous pouvez utiliser les procédures de désinstallation standards disponibles sur votre appareil mobile ou via le magasin d’applications ou le réseau mobile.</p>
+<h2 id="politique-de-conservation-des-données">Politique de Conservation des Données</h2>
+<p>Le Prestataire de Service conservera les données fournies par l’utilisateur tant que vous utiliserez l’Application et pour une durée raisonnable par la suite. Si vous souhaitez supprimer les données fournies via l’Application, veuillez contacter le Prestataire de Service à <a href="mailto:pierre.mollard@proton.me">pierre.mollard@proton.me</a>, et il répondra dans un délai raisonnable.</p>
+<h2 id="enfants">Enfants</h2>
+<p>Le Prestataire de Service ne sollicite pas intentionnellement des données ou ne fait pas de marketing ciblé envers les enfants de moins de 13 ans.</p>
+<p>L’Application ne s’adresse pas aux personnes de moins de 13 ans. Le Prestataire de Service ne collecte pas intentionnellement d’informations personnellement identifiables provenant d’enfants de moins de 13 ans. Si le Prestataire de Service découvre qu’un enfant de moins de 13 ans a fourni des informations personnelles, celles-ci seront immédiatement supprimées de ses serveurs. Si vous êtes un parent ou un tuteur et que vous avez connaissance du fait que votre enfant nous a fourni des informations personnelles, veuillez contacter le Prestataire de Service (<a href="mailto:pierre.mollard@proton.me">pierre.mollard@proton.me</a>) afin que les mesures nécessaires puissent être prises.</p>
+<h2 id="sécurité">Sécurité</h2>
+<p>Le Prestataire de Service est soucieux de la confidentialité de vos informations. Il met en place des mesures de sécurité physiques, électroniques et procédurales pour protéger les informations qu’il traite et conserve.</p>
+<h2 id="modifications">Modifications</h2>
+<p>Cette politique de confidentialité peut être mise à jour périodiquement. Le Prestataire de Service vous informera de toute modification en mettant à jour cette page avec la nouvelle politique de confidentialité. Il est conseillé de consulter régulièrement cette politique, car l’utilisation continue de l’Application vaut acceptation des modifications.</p>
+<p>Cette politique de confidentialité est en vigueur à compter du 25 mars 2025.</p>
+<h2 id="votre-consentement">Votre Consentement</h2>
+<p>En utilisant l’Application, vous consentez au traitement de vos informations comme indiqué dans cette politique de confidentialité.</p>
+<h2 id="contact">Contact</h2>
+<p>Si vous avez des questions concernant la confidentialité lors de l’utilisation de l’Application, veuillez contacter le Prestataire de Service par e-mail à <a href="mailto:pierre.mollard@proton.me">pierre.mollard@proton.me</a>.</p> </div> <div class="flex justify-end gap-4 mt-10"> <!-- Go back to home --> <a href="/" class="px-6 py-3 rounded-lg bg-tabbar-primary text-md-heading-dark dark:bg-tabbar-primary-dark hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-colors"> Retour accueil </a> <!-- Back to top --> <button id="scrollToTopBtn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="hidden px-4 py-3 rounded-lg bg-tabbar-primary text-md-heading-dark dark:bg-tabbar-primary-dark hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-colors cursor-pointer">
+↑
+</button> </div> </div> </div> </div>  </main>  </main> <footer class="mt-16 pt-6 pb-8 text-center text-sm text-on-surface dark:text-on-surface-dark" data-astro-cid-sckkx6r4>
+© 2025 Pierre Mollard. All rights reserved.
+</footer> </body></html>
