@@ -1,15 +1,16 @@
 ---
 import AppPresentation from "../../../components/AppPresentation.astro";
 import AppFrancoQuizLayoutFR from "../../../layouts/AppFrancoQuizLayoutFR.astro";
+import appLogo from "../../../assets/applis/francoquiz.png";
 ---
 
 <AppFrancoQuizLayoutFR>
     <AppPresentation
         title="FrancoQuiz"
         subtitle="Apprenez les départements français"
-        back="Back to Home"
-        description="This is our Check-It."
+        back="Retour Accueil"
+        description="Découvrez FrancoQuiz, l'application parfaite pour apprendre et réviser les départements français de manière ludique et interactive ! Testez vos connaissances avec des quiz variés : retrouvez le numéro d'un département, sa préfecture, son emplacement sur la carte ou son nom… toutes les combinaisons sont possibles !"
         link="https://play.google.com/store/apps/details?id=com.creepierre.geolearner"
-        image=""
+        image={appLogo}
     />
 </AppFrancoQuizLayoutFR>

@@ -1,15 +1,16 @@
 ---
 import AppPresentation from "../../components/AppPresentation.astro";
 import AppFrancoQuizLayout from "../../layouts/AppFrancoQuizLayout.astro";
+import appLogo from "../../assets/applis/francoquiz.png";
 ---
 
 <AppFrancoQuizLayout>
     <AppPresentation
         title="FrancoQuiz"
-        subtitle="Apprenez les départements français"
-        back="Back to Home"
-        description="This is our Check-It."
+        subtitle="Learn & Master French Geography"
+        back="Back Home"
+        description="Discover FrancoQuiz, the perfect app to learn and review French departments in a fun and interactive way! Test your knowledge with varied quizzes: guess the department number, prefecture, location on the map, or name… every combination is possible!"
         link="https://play.google.com/store/apps/details?id=com.creepierre.geolearner"
-        image=""
+        image={appLogo}
     />
 </AppFrancoQuizLayout>

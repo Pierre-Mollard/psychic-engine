@@ -5,7 +5,7 @@ export interface Props {
     back: string;
     description: string;
     link: string;
-    image: any;
+    image: ImageMetadata;
 }
 const { title, subtitle, back, description, link, image } = Astro.props;
 ---
@@ -23,9 +23,7 @@ const { title, subtitle, back, description, link, image } = Astro.props;
 
 <div class="pb-3w-full pb-3">
     <!-- Centered content area with margin on sides -->
-    <div
-        class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-4 border-b border-on-surface-weak dark:border-on-surface-weak-dark"
-    >
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-4">
         <div class="m-4">
             <div
                 class="prose max-w-none
@@ -43,9 +41,57 @@ const { title, subtitle, back, description, link, image } = Astro.props;
                        prose-strong:text-md-strong dark:prose-strong:text-md-strong-dark
                        prose-"
             >
-                <h1>{title}</h1>
-                <h2>{subtitle}</h2>
-                <p>{description}</p>
+                <div
+                    class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center py-16 px-4"
+                >
+                    <div
+                        class="max-w-3xl w-full bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg"
+                    >
+                        <!-- App Logo and Title Section -->
+                        <div
+                            class="flex flex-col items-center mb-8 no-localization"
+                        >
+                            <!-- App Logo -->
+                            <img
+                                src={image.src}
+                                alt="App Logo"
+                                class="w-32 h-32 object-contain mb-4"
+                            />
+
+                            <!-- App Title -->
+                            <h1
+                                class="text-3xl font-semibold text-md-heading dark:text-md-heading-dark mb-2"
+                            >
+                                {title}
+                            </h1>
+
+                            <!-- App Subtitle -->
+                            <h2
+                                class="text-xl text-md-text dark:text-md-text-dark mb-4"
+                            >
+                                {subtitle}
+                            </h2>
+                        </div>
+
+                        <!-- App Description Section -->
+                        <p
+                            class="text-lg text-md-text dark:text-md-text-dark mb-6 text-center"
+                        >
+                            {description}
+                        </p>
+
+                        <!-- Google Play Store Link -->
+                        <div class="text-center">
+                            <a
+                                href={link}
+                                target="_blank"
+                                class="inline-block px-6 py-3 bg-tabbar-primary dark:bg-tabbar-primary-dark text-white dark:text-white rounded-lg hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-all duration-300"
+                            >
+                                Download on Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="flex justify-end gap-4 mt-10">

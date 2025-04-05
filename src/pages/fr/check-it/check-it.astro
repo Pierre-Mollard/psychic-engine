@@ -1,15 +1,16 @@
 ---
 import AppPresentation from "../../../components/AppPresentation.astro";
 import AppCheckItLayoutFR from "../../../layouts/AppCheckItLayoutFR.astro";
+import appLogo from "../../../assets/applis/checkit.png";
 ---
 
 <AppCheckItLayoutFR>
     <AppPresentation
         title="Check-It"
-        subtitle="Journal d'objectifs"
-        back="Back to Home"
-        description="This is our Check-It."
+        subtitle="Journal & Suiveur d'objectifs"
+        back="Retour Accueil"
+        description="Restez engagé envers vos objectifs avec TrackIt, l'application de suivi des habitudes conçue pour la simplicité et la rapidité. Que vous souhaitiez améliorer votre santé, votre productivité ou votre développement personnel, TrackIt vous aide à atteindre vos objectifs chaque jour avec un minimum d'effort."
         link="https://play.google.com/store/apps/details?id=com.creepierre.risearc"
-        image=""
+        image={appLogo}
     />
 </AppCheckItLayoutFR>

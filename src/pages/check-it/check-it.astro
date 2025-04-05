@@ -1,15 +1,16 @@
 ---
 import AppPresentation from "../../components/AppPresentation.astro";
 import AppCheckItLayout from "../../layouts/AppCheckItLayout.astro";
+import appLogo from "../../assets/applis/checkit.png";
 ---
 
 <AppCheckItLayout>
     <AppPresentation
         title="Check-It"
-        subtitle="Journal d'objectifs"
-        back="Back to Home"
-        description="This is our Check-It."
+        subtitle="Habit Logger & Tracker"
+        back="Back Home"
+        description="Stay committed to your goals with TrackIt, the habit tracker designed for simplicity and speed. Whether you're aiming to improve your health, productivity, or personal growth, TrackIt helps you achieve your goals every day with minimal effort."
         link="https://play.google.com/store/apps/details?id=com.creepierre.risearc"
-        image=""
+        image={appLogo}
     />
 </AppCheckItLayout>
