@@ -4,32 +4,50 @@ export interface Props {
     description: string;
     logo: string;
     link: string;
-    color: string;
+    colorLight: any;
+    colorDark: any;
 }
-const { title, description, logo, link, color } = Astro.props;
+const { title, description, logo, link, colorLight, colorDark } = Astro.props;
 ---
 
-<a
-    href={link}
-    class="group block p-6 bg-gray-50 rounded-xl shadow-lg relative overflow-hidden transition duration-300
-           hover:shadow-2xl hover:ring-2 hover:ring-opacity-50 hover:scale-105
-           before:absolute before:inset-0 before:opacity-0 before:blur-lg before:transition-opacity before:duration-300 hover:before:opacity-30"
-    style={`--hover-color: ${color}; border-color: var(--hover-color);`}
->
-    <div class="flex items-center relative z-10">
-        <div class="flex-1">
-            <h2 class="text-xl font-bold text-gray-800">{title}</h2>
-            <p class="text-gray-600 mt-4">{description}</p>
+<a href={link} class="sm:m-4 m-2 block group sm:w-64 w-48 cursor-pointer">
+    <div
+        class="flex flex-col items-start gap-4 w-full h-full"
+        style={`--shadow-glow-color-light: ${colorLight}; --shadow-glow-color-dark: ${colorDark}`}
+    >
+        <!-- Image -->
+        <img
+            src={logo}
+            alt="Image Title"
+            class="w-full sm:h-64 h-48 object-cover rounded-2xl shadow-lg transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:shadow-glow group-hover:scale-105 z-10 group-hover:z-10"
+        />
+
+        <!-- Text panel -->
+        <div
+            class="relative w-full p-4 rounded-xl shadow-xl bg-dark/30 dark:bg-black/30 backdrop-blur-md text-white"
+        >
+            <!-- Title -->
+            <h1 class="text-xl font-semibold drop-shadow text-center">
+                {title}
+            </h1>
+
+            <!-- Description -->
+            <p
+                class="mt-2 text-sm text-center transition-all duration-300 ease-in-out
+          sm:opacity-0 sm:max-h-0 sm:overflow-hidden
+          sm:group-hover:opacity-100 sm:group-hover:max-h-40"
+            >
+                {description}
+            </p>
         </div>
-        <img src={logo} alt="Logo" class="w-16 h-16 ml-4" />
     </div>
 </a>
 
 <style>
-    a:hover {
-        --tw-ring-color: var(--hover-color);
-    }
-    a:hover::before {
-        background-color: var(--hover-color);
+    /* Adding glow effect to the image on hover */
+    .group:hover .group-hover\:shadow-glow {
+        box-shadow:
+            0 0 10px 2px var(--shadow-glow-color-light),
+            0 0 20px 4px var(--shadow-glow-color-dark);
     }
 </style>

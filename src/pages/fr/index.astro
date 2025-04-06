@@ -6,27 +6,28 @@ import francoQuizLogo from "../../assets/applis/francoquiz.png";
 ---
 
 <Layout title="Pierre Mollard" lang="fr">
-	<p class="text-4xl">FR</p>
-	<div class="flex flex-grow items-center justify-center w-full">
+	<div
+		class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex-grow flex-col flex items-center justify-center"
+	>
 		<div
-			class="w-full max-w-4xl bg-blue-200 p-4 rounded-2xl shadow-lg bg-opacity-40 backdrop-blur-lg"
+			class="flex flex-col sm:flex-row justify-center sm:justify-evenly items-center gap-8 sm:gap-32"
 		>
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<AppCard
-					title="Check-It"
-					description="Create daily objective then track and follow them."
-					logo={checkItLogo.src}
-					link="/check-it/check-it"
-					color="black"
-				/>
-				<AppCard
-					title="FrancoQuiz"
-					description="Learn France geography through different quiz."
-					logo={francoQuizLogo.src}
-					link="/francoquiz/francoquiz"
-					color="blue"
-				/>
-			</div>
+			<AppCard
+				title="Check-It"
+				description="Create daily objective then track and follow them."
+				logo={checkItLogo.src}
+				link="/check-it/check-it"
+				colorLight="#E2E8F0"
+				colorDark="#F9E79F "
+			/>
+			<AppCard
+				title="FrancoQuiz"
+				description="Learn France geography through different quiz."
+				logo={francoQuizLogo.src}
+				link="/francoquiz/francoquiz"
+				colorLight="#E2E8F0"
+				colorDark="#38BDF8 "
+			/>
 		</div>
 	</div>
 </Layout>

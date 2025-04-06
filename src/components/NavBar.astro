@@ -165,8 +165,11 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
       if (menu && overlay) {
         menu.classList.remove('max-h-[500px]', 'pt-2', 'pb-3');
         menu.classList.add('max-h-0', 'pt-0', 'pb-0');
-        overlay.classList.add('opacity-0');
-        overlay.classList.remove('opacity-100');
+        requestAnimationFrame(() => {
+          // Ensures the class change is detected as a transition
+          overlay.classList.add('opacity-0');
+          overlay.classList.remove('opacity-100');
+        });
         const handleTransitionEnd = () => {
           overlay.classList.add('hidden');
           overlay.removeEventListener('transitionend', handleTransitionEnd);
@@ -202,8 +205,11 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
       if (isOpen) {
         mobileMenu.classList.remove('max-h-[500px]', 'pt-2', 'pb-3');
         mobileMenu.classList.add('max-h-0', 'pt-0', 'pb-0');
-        overlay.classList.add('opacity-0');
-        overlay.classList.remove('opacity-100');
+        requestAnimationFrame(() => {
+          // Ensures the class change is detected as a transition
+          overlay.classList.add('opacity-0');
+          overlay.classList.remove('opacity-100');
+        });
         const handleTransitionEnd = () => {
           overlay.classList.add('hidden');
           overlay.removeEventListener('transitionend', handleTransitionEnd);
