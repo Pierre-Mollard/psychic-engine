@@ -5,9 +5,11 @@ export interface Props {
     back: string;
     description: string;
     link: string;
+    download: string;
     image: ImageMetadata;
 }
-const { title, subtitle, back, description, link, image } = Astro.props;
+const { title, subtitle, back, description, link, download, image } =
+    Astro.props;
 ---
 
 <script is:inline>
@@ -87,7 +89,7 @@ const { title, subtitle, back, description, link, image } = Astro.props;
                                 target="_blank"
                                 class="inline-block px-6 py-3 bg-tabbar-primary dark:bg-tabbar-primary-dark text-white dark:text-white rounded-lg hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-all duration-300"
                             >
-                                Download on Google Play
+                                {download}
                             </a>
                         </div>
                     </div>

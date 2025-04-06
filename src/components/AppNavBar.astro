@@ -11,12 +11,14 @@ const currentSubPath = Astro.url.pathname;
 // Determine the active tab
 let activeTab = "";
 for (const link of links) {
-    if (currentSubPath.endsWith(link.href)) {
+    if (
+        currentSubPath.startsWith(link.href) ||
+        currentSubPath.startsWith("/fr" + link.href)
+    ) {
         activeTab = link.key;
         break;
     }
 }
-if (activeTab === "" && links.length > 0) activeTab = links[0].key;
 ---
 
 <style>
