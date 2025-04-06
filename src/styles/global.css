@@ -30,6 +30,15 @@
     --color-navbar-menu-bg-hover: oklch(0.72 0.0184 256.31);
     --color-navbar-menu-bg-hover-dark: oklch(0.45 0 none);
 
+    /* MobileMenu-specific colors */
+    --color-mobile-menu-hover: oklch(0.79 0 none / 0.6);
+    --color-mobile-menu-hover-dark: oklch(0.43 0 none / 0.6);
+    --color-mobile-svg: oklch(0.26 0.0048 248.01);
+    --color-mobile-svg-dark: oklch(0.85 0.0064 255.48);
+    --color-mobile-svg-press: oklch(0.36 0.0014 197.1);
+    --color-mobile-svg-press-dark: oklch(0.66 0.0069 255.49);
+
+
     /* Tabbar-specific colors */
     --color-tabbar-primary: oklch(0.39 0.1808 315.76);
     --color-tabbar-primary-dark: oklch(0.46 0.1774 0.54);

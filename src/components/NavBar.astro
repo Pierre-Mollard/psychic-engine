@@ -47,24 +47,35 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
   }
 </style>
 
-<nav class="bg-navbar dark:bg-navbar-dark shadow-md">
+
+  <!-- Overlay -->
+  <div
+    id="mobile-overlay"
+    class="fixed inset-0 bg-black/50 transition-opacity duration-500 opacity-0 backdrop-blur-xs backdrop-saturate-150 z-5 hidden sm:hidden"
+    onclick="toggleMenu()"
+  />
+
+<nav class="bg-navbar dark:bg-navbar-dark shadow-md z-15">
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
+
       <!-- Mobile menu button -->
-      <button
-        type="button"
-        class="absolute inset-y-0 left-0 flex items-center cursor-pointer sm:hidden p-2 text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-text-hover dark:hover:bg-navbar-menu-text-hover-dark hover:text-navbar-menu-text-active dark:hover:text-navbar-menu-text-active-dark z-20"
-        onclick="toggleMenu()"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg class="size-6" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-
-
+      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden p-2">
+        <button class="cursor-pointer group inline-flex w-10 h-10 text-mobile-svg dark:text-mobile-svg-dark hover:bg-mobile-menu-hover dark:hover:bg-mobile-menu-hover-dark text-center items-center justify-center rounded hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] z-20 transition" 
+              id="mobile-menu-bt"
+              aria-pressed="false" 
+              onclick="toggleMenu()">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-6 h-6 fill-current pointer-events-none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+              <rect class="origin-center -translate-y-[5px] translate-x-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-x-0 group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[315deg]" y="7" width="9" height="2" rx="1"></rect>
+              <rect class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-[[aria-pressed=true]]:rotate-45" y="7" width="16" height="2" rx="1"></rect>
+              <rect class="origin-center translate-y-[5px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-[[aria-pressed=true]]:translate-y-0 group-[[aria-pressed=true]]:rotate-[135deg]" y="7" width="9" height="2" rx="1"></rect>
+          </svg>
+        </button>
+      </div>
+      
       <!-- Desktop Menu -->
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-10" >
+      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-15" >
         <div class="relative flex items-center h-16">
           <picture>
             <!-- Dark mode image -->
@@ -113,7 +124,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
         <a
           href={activeTab === "Contact" ? undefined : "/contact/"}
           class={clsx(
-            "flex rounded-full border-2 focus:ring-2 z-20 transition-all duration-200 ease-in-out",
+            "flex rounded-full border-2 focus:ring-2 z-15 transition-all duration-200 ease-in-out",
             activeTab === "Contact"
               ? "border-navbar-menu-bg-active dark:border-navbar-menu-bg-active-dark ring-navbar-menu-bg-active dark:ring-navbar-menu-bg-active-dark"
               : "border-transparent focus:ring-navbar-menu-bg-active dark:focus:ring-navbar-menu-bg-active-dark"
@@ -127,26 +138,98 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="sm:hidden hidden px-2 pt-2 pb-3 space-y-1 z-20">
-    {links.map((link: Link) => (
-      <a
-      href={activeTab === link.key ? undefined : link.href}
-        class={clsx("block rounded-md px-3 py-2 text-base font-medium", activeTab === link.key
-            ? "bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark cursor-default"
-            : "text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark")}
-      >
-        {link.name}
-      </a>
-    ))}
+  <div  
+    id="mobile-menu" 
+    class="sm:hidden overflow-hidden max-h-0 transition-all duration-500 ease-in-out px-2 pt-0 pb-0 space-y-1 z-20">
+      {links.map((link: Link) => (
+        <a
+        href={activeTab === link.key ? undefined : link.href}
+          class={clsx("block rounded-md px-3 py-2 text-base font-medium transition-colors z-21", activeTab === link.key
+              ? "bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark cursor-default"
+              : "text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark")}
+        >
+          {link.name}
+        </a>
+      ))}
   </div>
+
 </nav>
 
 <!-- JavaScript -->
 <script is:inline>
 
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('mobile-overlay');
+      if (menu && overlay) {
+        menu.classList.remove('max-h-[500px]', 'pt-2', 'pb-3');
+        menu.classList.add('max-h-0', 'pt-0', 'pb-0');
+        overlay.classList.add('opacity-0');
+        overlay.classList.remove('opacity-100');
+        const handleTransitionEnd = () => {
+          overlay.classList.add('hidden');
+          overlay.removeEventListener('transitionend', handleTransitionEnd);
+        };
+      }
+
+      
+      mobileMenuBt.setAttribute("aria-pressed", false);
+      mobileMenuBt.classList.add("text-mobile-svg");
+      mobileMenuBt.classList.remove("text-mobile-svg-press");
+      mobileMenuBt.classList.add("dark:text-mobile-svg-dark");
+      mobileMenuBt.classList.remove("dark:text-mobile-svg-press-dark");
+    }
+  });
+
   function toggleMenu() {
     const mobileMenu = document.getElementById("mobile-menu");
-    if (mobileMenu)
-    mobileMenu.classList.toggle("hidden");
+    const mobileMenuBt = document.getElementById("mobile-menu-bt");
+    const overlay = document.getElementById('mobile-overlay');
+    
+    
+    if (mobileMenuBt){
+        
+        mobileMenuBt.classList.add("text-mobile-svg");
+        mobileMenuBt.classList.remove("text-mobile-svg-press");
+        mobileMenuBt.classList.add("dark:text-mobile-svg-dark");
+        mobileMenuBt.classList.remove("dark:text-mobile-svg-press-dark");
+    }
+
+    if (mobileMenu && mobileMenuBt){
+      const isOpen = mobileMenu.classList.contains('max-h-[500px]'); 
+      mobileMenuBt.setAttribute("aria-pressed", !isOpen);
+      if (isOpen) {
+        mobileMenu.classList.remove('max-h-[500px]', 'pt-2', 'pb-3');
+        mobileMenu.classList.add('max-h-0', 'pt-0', 'pb-0');
+        overlay.classList.add('opacity-0');
+        overlay.classList.remove('opacity-100');
+        const handleTransitionEnd = () => {
+          overlay.classList.add('hidden');
+          overlay.removeEventListener('transitionend', handleTransitionEnd);
+        };
+        overlay.addEventListener('transitionend', handleTransitionEnd);
+
+        mobileMenuBt.classList.add("text-mobile-svg");
+        mobileMenuBt.classList.remove("text-mobile-svg-press");
+        mobileMenuBt.classList.add("dark:text-mobile-svg-dark");
+        mobileMenuBt.classList.remove("dark:text-mobile-svg-press-dark");
+
+      } else {
+        mobileMenu.classList.remove('max-h-0', 'pt-0', 'pb-0');
+        mobileMenu.classList.add('max-h-[500px]', 'pt-2', 'pb-3');
+        overlay.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          // Ensures the class change is detected as a transition
+          overlay.classList.remove('opacity-0');
+          overlay.classList.add('opacity-100');
+        });
+
+        mobileMenuBt.classList.remove("text-mobile-svg");
+        mobileMenuBt.classList.add("text-mobile-svg-press");
+        mobileMenuBt.classList.remove("dark:text-mobile-svg-dark");
+        mobileMenuBt.classList.add("dark:text-mobile-svg-press-dark");
+      }
+    }
   }
 </script>
