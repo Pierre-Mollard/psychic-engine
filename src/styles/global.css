@@ -13,9 +13,9 @@
     --color-on-surface-weak-dark: oklch(0.56 0 none);
 
     /* Navbar-specific colors */
-    --color-navbar: oklch(0.49 0.155 260.7);
-    --color-navbar-dark: oklch(0.27 0.0904 260.42);
-    --color-navbar-dropdown-bg: oklch(0.8 0.0191 258.36);
+    --color-navbar: oklch(0.68 0.1308 77.59);
+    --color-navbar-dark: oklch(0.22 0.0731 259.36);
+    --color-navbar-dropdown-bg: oklch(0.91 0.0104 261.79);
     --color-navbar-dropdown-bg-dark: oklch(0.31 0 none);
     --color-navbar-dropdown-bg-500: oklch(0.72 0.0184 256.31);
     --color-navbar-dropdown-bg-500-dark: oklch(0.24 0.0015 17.27);
@@ -27,7 +27,7 @@
     --color-navbar-menu-text-active-dark: oklch(0.17 0.0016 197);
     --color-navbar-menu-bg-active: oklch(0.17 0.0016 197);
     --color-navbar-menu-bg-active-dark: oklch(0.99 0.0021 197.12);
-    --color-navbar-menu-bg-hover: oklch(0.72 0.0184 256.31);
+    --color-navbar-menu-bg-hover: oklch(0.82 0.0155 260.73);
     --color-navbar-menu-bg-hover-dark: oklch(0.45 0 none);
 
     /* MobileMenu-specific colors */

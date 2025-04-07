@@ -36,8 +36,8 @@ const { title, subtitle, back, description, link, download, image } =
                        prose-h2:text-md-heading dark:prose-h2:text-md-heading-dark
                        prose-h3:text-md-heading dark:prose-h3:text-md-heading-dark
                        prose-h4:text-md-heading dark:prose-h4:text-md-heading-dark
-                       prose-a:text-md-link dark:prose-a:text-md-link-dark
-                       prose-a:hover:text-md-link-hover dark:prose-a:hover:text-md-link-hover-dark
+                       prose-a:text-md-heading-dark
+                       prose-a:hover:text-md-link-hover-dark
                        prose-li:marker:text-md-bullet dark:prose-li:marker:text-md-bullet-dark
                        prose-blockquote:text-md-blockquote-border dark:prose-blockquote:text-md-blockquote-border-dark
                        prose-strong:text-md-strong dark:prose-strong:text-md-strong-dark
@@ -87,7 +87,7 @@ const { title, subtitle, back, description, link, download, image } =
                             <a
                                 href={link}
                                 target="_blank"
-                                class="inline-block px-6 py-3 bg-tabbar-primary dark:bg-tabbar-primary-dark text-white dark:text-white rounded-lg hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-all duration-300"
+                                class="inline-block px-6 py-3 bg-tabbar-primary dark:bg-tabbar-primary-dark rounded-lg hover:bg-tabbar-hover-primary dark:hover:bg-tabbar-hover-primary-dark transition-all duration-300"
                             >
                                 {download}
                             </a>
