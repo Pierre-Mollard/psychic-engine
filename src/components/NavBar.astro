@@ -55,9 +55,9 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
     onclick="toggleMenu()"
   />
 
-<nav class="bg-navbar dark:bg-navbar-dark shadow-md z-15">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 items-center justify-between">
+<nav class="bg-gradient-to-br from-[#6a4c9c] via-[#9b61a5] to-[#c271d4] dark:from-[#45314e] dark:via-[#5f3d5e] dark:to-[#7d4f92] shadow-md z-15">
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+    <div class="relative flex h-16 items-center justify-between ">
 
       <!-- Mobile menu button -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden p-2">
@@ -75,19 +75,19 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
       </div>
       
       <!-- Desktop Menu -->
-      <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start z-15" >
-        <div class="relative flex items-center h-16">
-          <picture>
-            <!-- Dark mode image -->
-            <source srcset={logoImageDark.src} media="(prefers-color-scheme: dark)" />
-            <!-- Light mode fallback -->
-            <img
-              class="size-8 ml-8"
-              src={logoImage.src}
-              alt="Pierre Mollard Image Logo"
-            />
-          </picture>
-        </div>
+      <div class="relative flex items-center h-16 justify-center sm:w-sm w-full">
+        <a href="/">
+        <picture>
+          <!-- Dark mode image -->
+          <source srcset={logoImageDark.src} media="(prefers-color-scheme: dark)" />
+          <!-- Light mode fallback -->
+          <img
+            class="size-8 max-w-full h-auto mx-auto block sm:ml-0 ml-10"
+            src={logoImage.src}
+            alt="Pierre Mollard Image Logo"
+          />
+        </picture>
+      </a>
       
         <div class="hidden sm:ml-6  sm:flex sm:items-center ">
             <div class="hidden sm:flex space-x-4">
@@ -120,7 +120,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
       </div>
 
       <!-- Profile -->
-      <div class="relative mr-4">
+      <div class="relative mr-">
         <a
           href={activeTab === "Contact" ? undefined : "/contact/"}
           class={clsx(
