@@ -1,6 +1,8 @@
 ---
 import logoImage from "../assets/Website_Logo_Combined.png";
 import logoImageDark from "../assets/Website_Logo_Combined_Dark.png";
+import "../styles/glitch-image.css";
+import "../styles/glitch-text.css";
 export interface Props {
     title: string;
     description: string;
@@ -9,77 +11,6 @@ export interface Props {
 const { title, description, footer } = Astro.props;
 ---
 
-<style>
-    @keyframes glitch {
-        0% {
-            transform: translate(0);
-        }
-        20% {
-            transform: translate(-5px, 0) skew(0.5deg);
-        }
-        40% {
-            transform: translate(5px, 0) skew(-0.5deg);
-        }
-        60% {
-            transform: translate(-3px, 0) skew(0.3deg);
-        }
-        80% {
-            transform: translate(0.5px, -0.5px) skew(-0.3deg);
-        }
-        100% {
-            transform: translate(0);
-        }
-    }
-
-    /* Glitchy class */
-    .glitchy {
-        position: relative;
-        animation: glitch 1.5s infinite;
-        filter: brightness(1) contrast(1) hue-rotate(0deg);
-        will-change: transform, filter;
-    }
-
-    /* Add RGB split effect using filters */
-    .glitchy::before,
-    .glitchy::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        background: inherit;
-        clip-path: inset(0 0 0 0);
-        filter: brightness(1.1) contrast(1.5) hue-rotate(180deg);
-        animation: rgb-split 1.5s infinite;
-    }
-
-    /* RGB Split animation for creating distortion effect */
-    @keyframes rgb-split {
-        0% {
-            clip-path: inset(0 0 0 0);
-            transform: translate(0);
-        }
-        25% {
-            clip-path: inset(0 0 0 10%);
-            transform: translate(-5px, 0);
-        }
-        50% {
-            clip-path: inset(0 0 0 15%);
-            transform: translate(5px, 0);
-        }
-        75% {
-            clip-path: inset(0 0 0 5%);
-            transform: translate(-5px, 0);
-        }
-        100% {
-            clip-path: inset(0 0 0 0);
-            transform: translate(0);
-        }
-    }
-</style>
-
 <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 pb-2.5">
     <div class="flex-grow flex items-center justify-center mt-5 sm:mt-20">
         <div
@@ -87,17 +18,29 @@ const { title, description, footer } = Astro.props;
         >
             <!-- Left Side Image -->
             <div class="w-full md:w-1/2 flex justify-center">
-                <img
-                    class="glitchy max-w-full h-auto rounded-xl"
-                    src={logoImageDark.src}
-                    alt="Contact Illustration"
-                />
+                <div class="glitch-wrapper">
+                    <img
+                        class="w-full h-auto object-cover rounded-xl glitch-img"
+                        src={logoImageDark.src}
+                        alt="Contact Illustration"
+                    />
+                    <img
+                        class="w-full h-auto object-cover rounded-xl glitch-img glitch-img-before"
+                        src={logoImageDark.src}
+                        alt="Contact Illustration"
+                    />
+                    <img
+                        class="w-full h-auto object-cover rounded-xl glitch-img glitch-img-after"
+                        src={logoImageDark.src}
+                        alt="Contact Illustration"
+                    />
+                </div>
             </div>
 
             <!-- Right Side Content -->
             <section class="w-full md:w-1/2 text-md-text-dark px-4">
                 <h1
-                    class="glitch text-3xl font-bold mb-6 text-md-heading-dark"
+                    class="glitchtxtalways text-3xl font-bold mb-6 text-md-heading-dark"
                     data-text={title}
                 >
                     {title}
@@ -112,7 +55,7 @@ const { title, description, footer } = Astro.props;
                         <strong>Email:</strong>
                         <a
                             href="mailto:pierre.mollard@proton.me"
-                            class="glitch text-md-link-dark hover:underline"
+                            class="glitchtxt text-md-link-dark hover:underline"
                             data-text="pierre.mollard@proton.me"
                             >pierre.mollard@proton.me</a
                         >
@@ -123,7 +66,7 @@ const { title, description, footer } = Astro.props;
                         <a
                             href="https://github.com/Pierre-Mollard"
                             target="_blank"
-                            class="glitch text-md-link-dark hover:underline"
+                            class="glitchtxt text-md-link-dark hover:underline"
                             data-text="github.com/Pierre-Mollard"
                         >
                             github.com/Pierre-Mollard
@@ -135,7 +78,7 @@ const { title, description, footer } = Astro.props;
                         <a
                             href="https://play.google.com/store/apps/dev?id=5497322522671187431"
                             target="_blank"
-                            class="text-md-link-dark hover:underline glitch"
+                            class="text-md-link-dark hover:underline glitchtxt"
                             data-text="Google Play"
                         >
                             Google Play
@@ -150,62 +93,3 @@ const { title, description, footer } = Astro.props;
         </div>
     </div>
 </div>
-
-<style>
-    .glitch {
-        position: relative;
-        color: #f6d8d5;
-        box-sizing: border-box;
-        display: inline-block;
-        overflow: hidden;
-        vertical-align: middle;
-    }
-    .glitch:hover {
-        opacity: 0.9;
-        text-shadow:
-            0px -2px #ec2225,
-            0px 2px #00c2cb,
-            -2px 0px #ec2225,
-            2px 0px #00c2cb;
-    }
-    .glitch::before {
-        content: attr(data-text);
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: #e0ffff;
-        z-index: -1;
-    }
-    .glitch:hover::before {
-        animation: animate 12ms ease-in-out infinite;
-        z-index: 1;
-    }
-    @keyframes animate {
-        0%,
-        100% {
-            top: -3px;
-            left: 0;
-            opacity: 1;
-        }
-        20% {
-            top: 0;
-            left: -7px;
-            opacity: 0.7;
-        }
-        40% {
-            top: 5px;
-            left: 0;
-            opacity: 0.2;
-        }
-        60% {
-            top: 0;
-            left: 7px;
-            opacity: 0.3;
-        }
-        80% {
-            top: 0;
-            left: 0;
-            opacity: 0.9;
-        }
-    }
-</style>

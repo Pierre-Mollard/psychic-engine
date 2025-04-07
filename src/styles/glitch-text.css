@@ -1,0 +1,110 @@
+.glitchtxt {
+    position: relative;
+    color: #f6d8d5;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.glitchtxt:hover {
+    opacity: 0.9;
+    text-shadow:
+        0px -2px #ec2225,
+        0px 2px #00c2cb,
+        -2px 0px #ec2225,
+        2px 0px #00c2cb;
+}
+.glitchtxt::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #e0ffff;
+    z-index: -1;
+}
+.glitchtxt:hover::before {
+    animation: animate 12ms ease-in-out infinite;
+    z-index: 1;
+}
+@keyframes animate {
+    0%,
+    100% {
+        top: -3px;
+        left: 0;
+        opacity: 1;
+    }
+    20% {
+        top: 0;
+        left: -7px;
+        opacity: 0.7;
+    }
+    40% {
+        top: 5px;
+        left: 0;
+        opacity: 0.2;
+    }
+    60% {
+        top: 0;
+        left: 7px;
+        opacity: 0.3;
+    }
+    80% {
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+    }
+}
+
+.glitchtxtalways {
+    position: relative;
+    color: #f6d8d5;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    opacity: 0.9;
+    text-shadow:
+      0px -2px #ec2225,
+      0px 2px #00c2cb,
+      -2px 0px #ec2225,
+      2px 0px #00c2cb;
+  }
+  
+  .glitchtxtalways::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #e0ffff;
+    z-index: 1;
+    animation: animate 200ms ease-in-out infinite;
+  }
+  
+  @keyframes animate {
+    0%, 100% {
+      top: -1px;
+      left: 0;
+      opacity: 1;
+    }
+    20% {
+      top: 0;
+      left: -3px;
+      opacity: 0.7;
+    }
+    40% {
+      top: 5px;
+      left: 0;
+      opacity: 0.2;
+    }
+    60% {
+      top: 0;
+      left: 3px;
+      opacity: 0.3;
+    }
+    80% {
+      top: 0;
+      left: 0;
+      opacity: 0.9;
+    }
+  }
+  
