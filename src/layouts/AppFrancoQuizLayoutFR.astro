@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import AppNavBar, { type SpecificLink } from "../components/AppNavBar.astro";
 import Layout from "./Layout.astro";
+import { ClientRouter } from "astro:transitions";
 
 const links: SpecificLink[] = [
 	{
@@ -25,6 +26,7 @@ const links: SpecificLink[] = [
 <Layout title="FrancoQuiz" lang="fr">
 	<AppNavBar links={links} />
 	<main class="flex-grow w-full flex flex-col">
+		<ClientRouter />
 		<slot />
 	</main>
 </Layout>
