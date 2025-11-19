@@ -23,6 +23,8 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
     activeTab = "Check-It";
 } else if (currentPath.startsWith("/francoquiz/") || currentPath.startsWith("/fr/francoquiz/") || currentPath.startsWith("/en/francoquiz/")) {
     activeTab = "FrancoQuiz";
+} else if (currentPath.startsWith("/neoncuber/") || currentPath.startsWith("/fr/neoncuber/") || currentPath.startsWith("/en/neoncuber/")) {
+    activeTab = "NeonCuber";
 } else if (currentPath.startsWith("/contact/") || currentPath.startsWith("/fr/contact/") || currentPath.startsWith("/en/contact/")) {
     activeTab = "Contact";
 } else {
@@ -95,7 +97,7 @@ if (currentPath.startsWith("/check-it/") || currentPath.startsWith("/fr/check-it
                   <div class="relative group">
                     <a
                       href={activeTab === link.key ? undefined : link.href}
-                      class={clsx("relative px-3 py-2 text-base font-medium rounded-md", activeTab === link.key
+                      class={clsx("relative px-3 py-2 text-base font-medium rounded-md whitespace-nowrap", activeTab === link.key
                           ? "bg-navbar-menu-bg-active dark:bg-navbar-menu-bg-active-dark text-navbar-menu-text-active dark:text-navbar-menu-text-active-dark no-pop-hover pointer-events-auto cursor-default"
                           : "text-navbar-menu-text dark:text-navbar-menu-text-dark hover:bg-navbar-menu-bg-hover dark:hover:bg-navbar-menu-bg-hover-dark hover:text-navbar-menu-text-hover dark:hover:text-navbar-menu-text-hover-dark transition-all duration-200 ease-in-out pop-hover")}
                     >

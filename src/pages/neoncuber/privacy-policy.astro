@@ -1,0 +1,9 @@
+---
+import MarkDownViewer from "../../components/MarkDownViewer.astro";
+import { Content } from "../../content/neoncuber/privacy-policy-en.md";
+import AppNeonCuberLayout from "../../layouts/AppNeonCuberLayout.astro";
+---
+
+<AppNeonCuberLayout>
+    <MarkDownViewer title="Privacy Policy" back="Back Home" content={Content} />
+</AppNeonCuberLayout>

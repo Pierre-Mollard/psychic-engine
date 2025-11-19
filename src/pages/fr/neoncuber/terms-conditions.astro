@@ -1,0 +1,13 @@
+---
+import MarkDownViewer from "../../../components/MarkDownViewer.astro";
+import { Content } from "../../../content/neoncuber/terms-conditions-fr.md";
+import AppNeonCuberLayoutFR from "../../../layouts/AppNeonCuberLayoutFR.astro";
+---
+
+<AppNeonCuberLayoutFR>
+    <MarkDownViewer
+        title="Terms and Conditions FR"
+        back="Retour accueil"
+        content={Content}
+    />
+</AppNeonCuberLayoutFR>

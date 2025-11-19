@@ -1,0 +1,32 @@
+---
+import "../styles/global.css";
+import AppNavBar, { type SpecificLink } from "../components/AppNavBar.astro";
+import Layout from "./Layout.astro";
+import { ClientRouter } from "astro:transitions";
+
+const links: SpecificLink[] = [
+	{
+		name: "Présentation",
+		href: "/neoncuber/neoncuber",
+		key: "Presentation",
+	},
+	{
+		name: "Politique de Confidentialité",
+		href: "/neoncuber/privacy-policy",
+		key: "Privacy",
+	},
+	{
+		name: "Conditions Générales",
+		href: "/neoncuber/terms-conditions",
+		key: "Terms",
+	},
+];
+---
+
+<Layout title="NeonCuber" lang="fr">
+	<AppNavBar links={links} />
+	<main class="flex-grow w-full flex flex-col">
+		<ClientRouter />
+		<slot />
+	</main>
+</Layout>
